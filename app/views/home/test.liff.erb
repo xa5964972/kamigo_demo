@@ -1,123 +1,172 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Javascript實現計算器</title>
-<style type="text/css">
-input{
-width:30px;
-height:20px;
-text-align:center;
+//實現計算器功能
+//結果
+var result = 0;
+//顯示框中的數（預設為“0”）
+var screenNum = "0";
+//數的初始輸入狀態，預設為0；當按了任意運算子鍵後，數的輸入狀態變為1
+var state = 0;
+//防止重複按運算子鍵
+var avoidRepeat = true;
+//運算子鍵（預設為0--等於號）
+var operator = 0;
+//第一步：獲取按鍵值，並顯示在顯示框中
+function command(num) {
+//獲取顯示框的值
+var str = String(document.form1.txt.value);
+//對該值進行判斷，如果該值不為"0"，且輸入狀態0，則返回前者，否則為""(雙重三目運算)
+//兩個判斷條件：1、顯示框中值是否為"0",  2、數的輸入狀態
+str = (str != "0")?((state == 0)?str:""):"";
+//給當前值追加字元
+str = str   String(num);
+//重新整理顯示
+document.form1.txt.value = str;
+//按了任意數字鍵後，數的輸入狀態變為0
+state = 0;
+//重置防止重複按鍵
+avoidRepeat = true;
 }
-#tbCalculator td
-{
-text-align:center;
-vertical-align:middle;
+//第二步：確保輸入的數是合法的，每個數至多隻有一個小數點
+function dot() {
+var str = String(document.form1.txt.value);
+//若該數前面未接運算子，則返回前值，否則為"0"；
+str = (state == 0)?str:"0";
+//Java裡String有length()方法，而JS裡String有length屬性
+for(i=0;i<=str.length;i  ) {
+//substr()獲取下標從i開始，個數為1個的子串
+if(str.substr(i,1)==".") {
+//當存在小數點時，則程式終止
+return;
+} 
 }
-</style>
-<script type="text/javascript">
-var result; //儲存點選運算子之前輸入框中的數值
-var operator; //儲存運算子
-var isPressEqualsKey = false; //記錄是否按下”=“鍵
-//數字鍵事件
-function connectionDigital(control)
-{
-var txt = document.getElementById('txtScream');
-if(isPressEqualsKey)
-{ 
-txt.value = ""; //已進行過計算，則清空數值輸入框重新開始
-isPressEqualsKey = false;
+//若無小數點，則在該數後面加上
+str = str ".";
+//重新整理顯示
+document.form1.txt.value = str;
+//恢復數的初始輸入狀態
+state = 0;
 }
-//數值輸入已經存在小數點,則不允許再輸入小數點
-if(txt.value.indexOf('.') > -1 && control.value == '.')
-return false;
-txt.value  = control.value; //將控制元件值賦給數值輸入框中
+//第三步：處理退格鍵
+function Backspace() {
+var str= String(document.form1.txt.value);
+//若顯示框中數不等於"0",則返回str，否則返回""
+str = (str != "0")?str:"";
+//獲取子串
+str = str.substr(0,str.length-1);
+//若str不為"",則返回子串str，否則str="0"
+str = (str != "")?str:"0";
+//重新整理顯示
+document.form1.txt.value = str;
 }
-//退格鍵事件
-function backspace()
-{
-var txt = document.getElementById('txtScream');
-txt.value = txt.value.substring(0,txt.value.length - 1);
+//第四步：刪除所有
+function deleteAll() {
+//顯示框設為"0"
+document.form1.txt.value = "0";
+//恢復數的初始輸入狀態
+state = 0;
+//恢復運算子鍵，預設為0--等於號
+operator = 0;
 }
-//ce鍵事件：清空數字輸入框
-function clearAll()
-{
-document.getElementById('txtScream').value = "";
-result = "";
-operator = "";
+//第五步：加法
+function add() {
+//呼叫計算函式
+calculate();
+//更改數的輸入狀態
+state = 1;
+//更改運算子鍵，1--加號
+operator = 1;
 }
-//  、-、*、/ 事件
-function calculation(control)
-{
-//將運算子儲存入全域性變數中
-operator = control.value; 
-var txt = document.getElementById('txtScream');
-if(txt.value == "")return false; //數值輸入框中沒有數字，則不能輸入運算子
-//將數值輸入框中的值儲存到計算表示式中
-result = txt.value; 
-//清空輸入框，以待輸入操作值
-txt.value = ""; 
+//第六步：減法
+function subtract() {
+//呼叫計算函式
+calculate();
+//更改數的輸入狀態
+state = 1;
+//2--減號
+operator = 2;
 }
-//計算結果
-function getResult()
-{
-var opValue;
-//計算表示式中存在運算子
-var sourseValue = parseFloat(result);
-var txt = document.getElementById('txtScream');
-if(operator == '*')
-opValue = sourseValue * parseFloat(txt.value);
-else if(operator == '/')
-opValue = sourseValue / parseFloat(txt.value);
-else if(operator == ' ')
-opValue = sourseValue   parseFloat(txt.value);
-else if(operator == '-')
-opValue = sourseValue - parseFloat(txt.value);
-txt.value = opValue;
-isPressEqualsKey = true;
-result = "";
-opValue = "";
+//第七步：乘法
+function multiply() {
+//呼叫計算函式
+calculate();
+//更改數的輸入狀態
+state = 1;
+//3--乘號
+operator = 3;
 }
-</script>
-</head>
-<body>
-<table id="tbCalculator" width="200" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#0066FF">
-<tr>
-<td height="30" colspan="4" align="center">
-<input type="text" name="txtScream" id="txtScream" style="width:180px; border-style:none; text-align:right;" readonly="readonly" /> </td>
-</tr>
-<tr>
-<td height="30" colspan="2">
-<input type="button" name="btnCE" id="btnCE" value="C E" style="width:80px;" align="right"; onclick="clearAll();" /></td>
-<td height="30" colspan="2">
-<input type="button" name="btn10" id="btn10" value="Backspace" style="width:80px;" align="right"; onclick="backspace();" /></td>
-</tr>
-<tr>
-<td height="30"><input type="button" name="btn7" id="btn7" value="7" onclick="connectionDigital(this);" /></td>
-<td><input type="button" name="btn8" id="btn8" value="8" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btn9" id="btn9" value="9" onclick="connectionDigital(this);" /></td>
-<td><input type="button" name="btn6" id="btn6" value="/" onclick="calculation(this);" /></td>
-</tr>
-<tr>
-<td height="30">
-<input type="button" name="btn4" id="btn4" value="4" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btn5" id="btn5" value="5" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btn6" id="btn6" value="6" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btn13" id="btn13" value="*" onclick="calculation(this);" /></td>
-</tr>
-<tr>
-<td height="30">
-<input type="button" name="btn1" id="btn1" value="1" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btn2" id="btn2" value="2" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btn3" id="btn3" value="3" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btn18" id="btn18" value="-" onclick="calculation(this);" /></td>
-</tr>
-<tr>
-<td height="30"><input type="button" name="btn0" id="btn0" value="0" onclick="connectionDigital(this);"/></td>
-<td><input type="button" name="btndot" id="btndot" value="." onclick="connectionDigital(this);" /></td>
-<td><input name="btn22" type="button" id="btn22" value="=" onclick="getResult();" /></td>
-<td><input type="button" name="btn23" id="btn23" value=" " onclick="calculation(this);" /></td>
-</tr>
-</table>
-</body>
-</html>
+//第八步：除法
+function divide() {
+//呼叫計算函式
+calculate();
+//更改數的輸入狀態
+state = 1;
+//4--除號
+operator = 4;
+}
+//第九步：正負號
+function sign() {
+//5--正負號
+operator = 5;
+//呼叫計算函式
+calculate();
+//更改數的輸入狀態
+state = 1;
+//0--等於號
+operator = 0;
+//正負號可以連續按
+avoidRepeat = true;
+}
+//第十步：等於
+function equal() {
+//呼叫計算函式
+calculate();
+//更改數的輸入狀態
+state = 1;
+//0--等於號
+operator = 0;
+}
+//第十一步：計算
+function calculate() {
+//獲取顯示框中的值
+screenNum = Number(document.form1.txt.value);
+if(avoidRepeat) { 
+switch(operator){
+case 1:
+result = result   screenNum;
+document.form1.txt.value = result;
+break;
+case 2:
+result = result - screenNum;
+document.form1.txt.value = result;
+break;
+case 3:
+result = result * screenNum;
+document.form1.txt.value = result;
+break;
+case 4:
+if(screenNum == 0){
+//設定顯示框的值
+document.getElementById("txt").value="除數不能為0";
+//3s後，執行清屏函式
+setTimeout(clearScreen,3000);
+}else{
+result = result/screenNum;
+document.form1.txt.value = result;
+}
+break;
+case 5:
+result = (-1)*screenNum;
+document.form1.txt.value = result;
+break;
+case 0:
+result = screenNum;
+document.form1.txt.value = result;
+break;
+}
+//當按了運算子鍵後，不能再按
+avoidRepeat = false;
+}
+}
+//第十二步：清屏函式
+function clearScreen() {
+document.getElementById("txt").value = "0";
+}
