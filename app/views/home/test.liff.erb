@@ -1,69 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>計算器</title>
-<style type="text/css">
-*{margin:0px;padding:0px}
-table{width:300px;margin:100px auto}
-td{height:30px;text-align:center;line-height:30px;border:1px solid #ccc;font-size:14px} input{float:left;margin-left:30px;display:inline}
-#jia,#jian,#cheng,#chu{width:30px}
-</style>
-<script type="text/javascript">
-//以下所有的註釋通用語所有的加減乘除演算法。
-//加法運算
-function jia(){
-//定義變數a,b,c
-var x,y,z;
-}; //通過document分別獲取x，y的值 x=document.getElementById("num1").value; y=document.getElementById("num2").value; //修改x，y的字元型別，並且得到z的值 z=parseInt(x) parseInt(y); //將z的值賦給id=result document.getElementById("result").value=z;
-//減法運算
-function jian(){
-var x,y,z;
-x=document.getElementById("num1").value;
-y=document.getElementById("num2").value;
-z=parseInt(x)-parseInt(y);
-document.getElementById("result").value=z;
-};
-//乘法運算
-function cheng(){
-var x,y,z;
-x=document.getElementById("num1").value;
-y=document.getElementById("num2").value;
-z=parseInt(x)*parseInt(y);
-document.getElementById("result").value=z;
-};
-//除法運算
-function chu(){
-var x,y,z;
-x=document.getElementById("num1").value;
-y=document.getElementById("num2").value;
-z=parseInt(x)/parseInt(y);
-document.getElementById("result").value=z;
-};
-</script>
-</head>
-<body>
-<table cellpadding="0" cellspacing="0">
-<tr>
-<td colspan="2">計算器</td>
-</tr>
-<tr>
-<td>數字一</td>
-<td><input type="text" id="num1" name="num1"></td>
-</tr>
-<tr>
-<td>數字二</td>
-<td><input type="text" id="num2" name="num2"></td>
-</tr>
-<tr>
-<td>結果</td>
-<td><input type="text" id="result" name="result"></td>
-</tr>
-<tr>
-<td colspan="2">
-<input type="button" name="jia" id="jia" value=" " onclick="jia()"> <input type="button" name="jian" id="jian" value="-" onclick="jian()">
-<input type="button" name="cheng" id="cheng" value="×" onclick="cheng()"> <input type="button" name="chu" id="chu" value="/" onclick="chu()"> </td>
-</tr>
-</table>
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="description" content="javascript計算器，由指令碼之家制作" /> 
+<title>計算器</title> 
+<script type="text/javascript"> 
+alert("本計算器由指令碼之家制作"); 
+function getResult(type){ 
+if(checkData()){ 
+} 
+var no1=parseInt(document.jisuanqi.no1.value); 
+var no2=parseInt(document.jisuanqi.no2.value); 
+var result; 
+switch(type){ 
+case ' ': 
+result = no1 no2; 
+break; 
+case '-': 
+result =no1-no2; 
+break; 
+case '*': 
+result =no1*no2; 
+break; 
+case '/': 
+result =no1/no2; 
+break; 
+case '%': 
+result =no1%no2; 
+break; 
+} 
+document.jisuanqi.result.value=result; 
+} 
+function checkData(){ 
+if(document.jisuanqi.no1.value==""){ 
+alert("第一個數字不能為空!請重新輸入"); 
+return; 
+} 
+if(document.jisuanqi.no2.value==""){ 
+alert("第二個不能為空!請重新輸入"); 
+return; 
+} 
+if(document.jisuanqi.no1.value=="0"){ 
+alert("第一個不能為零!請重新輸入"); 
+return; 
+} 
+if(isNaN(document.jisuanqi.no1.value)){ 
+alert("第一個不是數字!請重新輸入"); 
+return; 
+} 
+if(isNaN(document.jisuanqi.no2.value)){ 
+alert("第二個不是數字!請重新輸入"); 
+} 
+} 
+</script> 
+</head> 
+<body> 
+<font size="6" color="#000000">本計算器由指令碼之家制作<br>QQ：873695957</font> 
+<p align="center" /> 
+<form name="jisuanqi"> 
+no1:<input name="no1" /><br> 
+no2:<input name="no2" /><br> 
+result:<input name="result" /><br> 
+<input type="button" value=" " onclick="getResult(' ')" /> 
+<input type="button" value="-" onclick="getResult('-')" /> 
+<input type="button" value="*" onclick="getResult('*')" /> 
+<input type="button" value="/" onclick="getResult('/')" /> 
+<input type="button" value="%" onclick="getResult('%')" /> 
+</form> 
+</p> 
+</body> 
 </html>
