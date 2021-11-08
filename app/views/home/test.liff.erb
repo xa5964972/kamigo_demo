@@ -7,8 +7,8 @@
 
     <style type="text/css">
         input {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 60px;
             font-size: 35px
         }
     </style>
@@ -22,7 +22,7 @@
         var resultOfExp;
         /*清空所有內容*/
         function clearAll() {
-            ele = document.getElementById("expression");
+            ele = document.getElementById("result");
             ele.value = "";
             ele = document.getElementById("result")
             ele.value = "";
@@ -30,13 +30,13 @@
 
         /*將按鈕對應的符號組合成表示式*/
         function inputExp(symbol) {
-            ele = document.getElementById("expression");
+            ele = document.getElementById("result");
             ele.value += symbol;
         }
 
         /*計算出結果*/
         function giveResult() {
-            ele = document.getElementById("expression");
+            ele = document.getElementById("result");
             resultOfExp = eval(ele.value);
             ele = document.getElementById("result");
             ele.value = resultOfExp;
@@ -44,7 +44,7 @@
 
         /*逐個刪除*/
         function deleteSymbol() {
-            ele = document.getElementById("expression");
+            ele = document.getElementById("result");
             var exp = ele.value;
             var end = exp.length - 1;
             exp = ele.value.slice(0, end);
@@ -57,12 +57,7 @@
 
         <tr>
             <td colspan="4">
-                <input type="text" id="expression" style="height: 60px; width: 410px; font-size: 40px" />
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="4">
+                
                 <form action="/test" method="post">
                 <label for=result"></label><br>
                 <input type="test" id="result" name="result" style="height: 60px; width: 410px; font-size: 40px" />
@@ -70,8 +65,11 @@
                 <input type="submit" value="Submit" >
                 </div>                                   
                 </form>
+                
             </td>
         </tr>
+
+       
 
         <tr>
             <td> <input type="button" id="btn_clear" value="C" onclick="clearAll()" /></td>
@@ -115,3 +113,4 @@
 </body>
 
 </html>
+
