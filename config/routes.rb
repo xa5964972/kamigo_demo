@@ -13,7 +13,15 @@ Rails.application.routes.draw do
   resources :todos
 # menu
   get "index", to: "home#index"
+  get "menu", to: "home#menu"
+  get "目錄", to: "home#menu"
 
+  # 查天氣
+  get "*location天氣", to: "weather#show"
+  get "(*location)天氣(*other)", to: "weather#show"
+
+  # 測試用
+  get "test", to: "home#test"
   
 
   # 查詢當下的使用者
