@@ -1,123 +1,42 @@
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>計算機練習</title>
-        <script>
-            function start(){
-                var btnget = document.getElementsByClassName("btn");
-                var btnOnWindow = document.getElementsByClassName("window")[0];
-                var btnDelAc = document.getElementsByClassName("btnDelAc");
-                var wayres = [];
+<head>
+<title>HTML计算器</title>
+</head>
+<body bgcolor= "#000000" text= "gold">
+<form name="计算器" >
+<input type="button" value="1" onClick="document.calculator.ans.
+value+='1'">
+<input type="button" value="2" onClick="document.calculator.ans.
+value+='2'">
+<input type="button" value="3" onClick="document.calculator.ans.
+value+='3'">
+<input type="button" value="4" onClick="document.calculator.ans.
+value+='4'">
+<input type="button" value="5" onClick="document.calculator.ans.
+value+='5'">
+<input type="button" value="6" onClick="document.calculator.ans.
+value+='6'">
+<input type="button" value="7" onClick="document.calculator.ans.
+value+='7'">
+<input type="button" value="8" onClick="document.calculator.ans.
+value+='8'">
+<input type="button" value="9" onClick="document.calculator.ans.
+value+='9'">
+<input type="button" value="-" onClick="document.calculator.ans.
+value+='-'">
+<input type="button" value="+" onClick="document.calculator.ans.
+value+='+'">
+<input type="button" value="*" onClick="document.calculator.ans.
+value+='*'">
+<input type="button" value="/" onClick="document.calculator.ans.
+value+='/'">
 
-                for(var i = 0; i <btnDelAc.length; i++){
-                    btnDelAc[i].onclick = function(){
-                        if(this.value == "AC"){
-                            wayres = [];
-                            btnOnWindow.value = "";
-                        }
-                        else{
-                            btnOnWindow.value = btnOnWindow.value.substr(0, btnOnWindow.value.length - 1);
-                        }
-                    }
-                }
-                for(var i=0; i < btnOnWindow.length; i++){
-                    btnOnWindow[i].onclick = function(){
-                        if(btnOnWindow.value =="" && this.value =="."){
-                            btnOnWindow.value = "0.";
-                        }
-                        else{
-                            if(!isNaN(this.value)||this.value == "."){
-                                if(btnOnWindow.value.indexOf(".")!= -1){
-                                    if(this.value!="."){
-                                        btnOnWindow.value += this.value;
-                                    }
-                                }
-                                else{
-                                    btnOnWindow.value += this.value;
-                                }
-                            }
-                            else{
-                                if(this.value!="="){
-                                    wayres[wayres.length]=btnOnWindow.value;
-                                    wayres[wayres.length]=this.value;
-                                    btnOnWindow.value = "";
-                                }
-                                else{
-                                    wayres[wayres.length] = btnOnWindow.value;
-                                    btnOnWindow.value = eval(wayres.join(""));
-                                    wayres=[];
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        </script>
-        <style type="text/css">
-            table{
-                border-collapse: collapse;
-                margin: auto;
-            }
-            td{
-                width:150px;
-                border:1px solid black;
-            }
-
-            .btn{
-                width:150px;
-                font-size: x-large;
-            }
-
-            .btnClick{
-                width:300px;
-                font-size: x-large;
-            }
-
-            .window{
-                width:600px;
-                font-size: x-large;
-                text-align: right;
-            }
-
-            .btnZero{
-                width:300px;
-                font-size: x-large;
-            }
-
-        </style>
-    </head>
-    <body onload = "start();">
-        <table>
-            <tr>
-               <td colspan="4"><input class="window" type='text' disabled/></td> 
-            </tr>
-            <tr>
-                <td colspan="2"><input class="btnClick" type='button' value="AC"/></td>
-                <td colspan="2"><input class="btnClick" type='button' value="Del"/></td>
-            </tr>
-            <tr>
-                <td><input class="btn" type="button" value="7"/></td>
-                <td><input class="btn" type="button" value="8"/></td>
-                <td><input class="btn" type="button" value="9"/></td>
-                <td><input class="btn" type="button" value="+"/></td>
-            </tr>
-            <tr>
-                <td><input class="btn" type="button" value="4"/></td>
-                <td><input class="btn" type="button" value="5"/></td>
-                <td><input class="btn" type="button" value="6"/></td>
-                <td><input class="btn" type="button" value="-"/></td>
-            </tr>
-            <tr>
-                <td><input class="btn" type="button" value="1"/></td>
-                <td><input class="btn" type="button" value="2"/></td>
-                <td><input class="btn" type="button" value="3"/></td>
-                <td><input class="btn" type="button" value="*"/></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input class="btnZero" type="button" value="0"/></td>
-                <td><input class="btn" type="button" value="="/></td>
-                <td><input class="btn" type="button" value="/"/></td>
-            </tr>
-        </table>
-    </body>
+<input type="button" value="0" onClick="document.calculator.ans.
+value+='0'">
+<input type="reset" value="Reset">
+<input type="button" value="=" onClick="document.calculator.ans.
+value=eval(document.calculator.ans.value)">
+<br>Solution is <input type="textfield" name="ans" value="">
+</form>
+</body>
 </html>
