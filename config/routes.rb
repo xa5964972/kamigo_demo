@@ -19,8 +19,7 @@ Rails.application.routes.draw do
   get "*location天氣", to: "weather#show"
   get "(*location)天氣(*other)", to: "weather#show"
 
-  # 測試用
-  get "test", to: "home#test"
+ 
   
 
   # 查詢當下的使用者
