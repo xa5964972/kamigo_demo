@@ -1,65 +1,50 @@
-<!DOCTYPE html>
-<html>
+
+<html
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>計算器</title>
+<link href="style/calculator.css" rel="stylesheet" type="text/css" />
+<script src="JavaScript/calculator.js"></script>>
 </head>
-<body>
-<table>
+<body >
+<form id="form1" name="form1" method="post" action="">
+<table width="320" border="1" cellpadding="0" cellspacing="0" class="trb" id="calculator">
 <tr>
-<td><input type="button" value="add"   onclick="setOp(' ', 'add');"/></td>
-<td><input type="button" value="miner" onclick="setOp('-', 'miner');"/></td>
-<td><input type="button" value="times" onclick="setOp('*', 'times');"/></td>
-<td><input type="button" value="divide" onclick="setOp('/', 'divide');"/></td>
+<td height="100" colspan="4" align="left" valign="top"><label for="txt"></label>
+<input name="txt" type="text" class="txt" id="txt" value="0" onfocus="this.blur();"/></td>
+</tr>
+<tr>
+<td width="80" height="40" align="center" valign="middle" onclick="deleteAll();">C</td>
+<td width="80" height="40" align="center" valign="middle" onclick="Backspace();">←</td>
+<td width="80" height="40" align="center" valign="middle" onclick="sign();">±</td>
+<td width="80" height="40" align="center" valign="middle" class="operator" onclick="add();">＋</td>
+</tr>
+<tr>
+<td width="80" height="40" align="center" valign="middle" onclick="command(7);">7</td>
+<td width="80" height="40" align="center" valign="middle" onclick="command(8);">8</td>
+<td width="80" height="40" align="center" valign="middle" onclick="command(9);">9</td>
+<td width="80" height="40" align="center" valign="middle" class="operator" onclick="subtract();">－</td>
+</tr>
+<tr>
+<td width="80" height="40" align="center" valign="middle" onclick="command(4);">4</td>
+<td width="80" height="40" align="center" valign="middle" onclick="command(5);">5</td>
+<td width="80" height="40" align="center" valign="middle" onclick="command(6);">6</td>
+<td width="80" height="40" align="center" valign="middle" class="operator" onclick="multiply();">×</td>
+</tr>
+<tr>
+<td width="80" height="40" align="center" valign="middle" onclick="command(1);">1</td>
+<td width="80" height="40" align="center" valign="middle" onclick="command(2);">2</td>
+<td width="80" height="40" align="center" valign="middle" onclick="command(3);">3</td>
+<td width="80" height="40" align="center" valign="middle" class="operator" onclick="divide();">÷</td>
+</tr>
+<tr>
+<td width="80" height="40" align="center" valign="middle" onclick="command(0);">0</td>
+<td width="80" height="40" align="center" valign="middle" onclick="dot();">▪</td>
+<td height="40" colspan="2" align="center" valign="middle" bgcolor="#CC6600" onclick="equal();">＝</td>
 </tr>
 </table>
-<table id="tb_calc" style="display:none;">
-<tr>
-<td> <input id="x" type="text" style="width:100px" value="" name="x" /></td>
-<td> <lable id="op" name="op"></lable> </td>
-<td> <input id="y" type="text" style="width:100px" value="" name="y" /> </td>
-<td> <input id="opTips" type="button" value="" onclick="calc();"/> </td>
-<td> <lable id="z" name="z"></lable> </td>
-</tr>
-</table>
-<script type="application/javascript">
-function setOp(op, opTips)
-{
-var tb=document.getElementById("tb_calc");
-tb.style.display = "none";
-document.getElementById("x").value = ""; 
-document.getElementById("y").value = ""; 
-document.getElementById("z").innerText = ""; 
-document.getElementById("op").innerText = op;
-document.getElementById("opTips").value = opTips;
-tb.style.display = "block";
-}
-function calc()
-{
-var x = parseInt(document.getElementById("x").value); 
-var y = parseInt(document.getElementById("y").value);
-var op = document.getElementById("op").innerText;
-var z = "";
-switch(op)
-{
-case ' ':
-z = x   y;
-break;
-case '-':
-z = x - y;
-break;
-case '*': ;
-z = x * y;
-break;
-case '/': ;
-z = x / y;
-break;
-default:
-z = '';
-}
-console.log(x, op, y, '=', z);
-document.getElementById("z").innerText = z;
-}
-</script>
+<p> </p>
+<p> </p>
+</form>
 </body>
 </html>
