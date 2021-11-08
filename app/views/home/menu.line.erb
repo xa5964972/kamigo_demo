@@ -27,7 +27,10 @@ Kamiflex.json(self) do
       horizontal_box margin: :lg do
         message_button "CRUD 展示", "todos", style: :primary
         filler
+      
       end
+
+      url_button "liff test", safe_liff_path(path: "/test", liff_size: :full), style: :primary, margin: :md
     end
   end
 end
