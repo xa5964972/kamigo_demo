@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   # todo
   resources :todos
 # menu
-  get "index", to: "home#index"
-  get "test", to: "home#test"
+  
+  
+  get "test", to: "home#test"  #不能刪
 
   # 查天氣
   get "*location天氣", to: "weather#show"
