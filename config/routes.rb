@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :todos
 # menu
   get "index", to: "home#index"
-  
+  get "test", to: "home#test"
 
   # 查天氣
   get "*location天氣", to: "weather#show"
