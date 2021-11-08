@@ -1,14 +1,8 @@
-<script>
-liff.sendMessages([
-    {
-      type: 'text',
-      text: 'Hello, World!'
-    }
-  ])
-    .then(() => {
-      console.log('message sent');
-    })
-    .catch((err) => {
-      console.log('error', err);
-    });
-</script>
+<form action="/test" method="post">
+<label for=fname">first name:</label><br>
+<input type="test" id="fname" name="fname"><br>
+<label for=lname">Last name:</label><br>
+<input type="test" id="lname" name="lname">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<input type="submit" value="Submit">
+</form>
