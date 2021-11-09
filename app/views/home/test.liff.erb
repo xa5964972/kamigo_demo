@@ -60,9 +60,12 @@
             <td colspan="4">
                 
                 <form action="/test" method="post">
+                
                 <label for=result"></label><br>
+                <div align="center" style="position:relative;top:-80px">
                 <input type="test" id="result" name="result" style="height: 60px; width: 330px; font-size: 40px" />
-                <div align="center" style="position:relative;top:400px">                                                                                                
+                </div>
+                <div align="center" style="position:relative;top:330px">                                                                                                
                 <input type="submit" value="送出" >
                 </div>                                   
                 </form>
@@ -73,10 +76,14 @@
        
 
         <tr>
+            
+            
             <td> <input type="button" id="btn_clear" value="C" onclick="clearAll()" /></td>
+            
             <td> <input type="button" id="btn_(" value="("onclick="inputExp('(')" /></td>
             <td> <input type="button" id="btn_)" value=")" onclick="inputExp(')')" /></td>
             <td> <input type="button" id="btn_/" value="/" onclick="inputExp('/')" /></td>
+            
         </tr>
 
         <tr>
