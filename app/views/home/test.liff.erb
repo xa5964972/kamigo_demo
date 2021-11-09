@@ -44,26 +44,26 @@
         }
 
         function inputExp1(symbol) {
-            ele = document.getElementById("come");
+            ele = document.getElementById("分類");
             ele.value = symbol;
         }
 
         function inputExp2(symbol) {
-            ele = document.getElementById("come1");
+            ele = document.getElementById("收支");
             ele.value = symbol;
         }
 
         /*計算出結果*/
         function giveResult() {
-            ele = document.getElementById("result");
+            ele = document.getElementById("金額");
             resultOfExp = eval(ele.value);
-            ele = document.getElementById("result");
+            ele = document.getElementById("金額");
             ele.value = resultOfExp;
         }
 
         /*逐個刪除*/
         function deleteSymbol() {
-            ele = document.getElementById("result");
+            ele = document.getElementById("金額");
             var exp = ele.value;
             var end = exp.length - 1;
             exp = ele.value.slice(0, end);
@@ -83,14 +83,14 @@
                 
                 <form action="/test" method="post">
                 
-                <label for=result"></label><br>
+                <label for=金額"></label><br>
                 <div align="center" style="position:relative;top:-0px">
-                <input type="test" id="result" name="result" style="height: 60px; width: 330px; font-size: 40px" />
+                <input type="test" id="金額" name="金額" style="height: 60px; width: 330px; font-size: 40px" />
                 </div>
 
-                <input type="test" id="come" name="come" style="display:none" />
+                <input type="test" id="分類" name="分類" style="display:none" />
 
-                <input type="test" id="come1" value="收入" name="come1" style="display:none" />
+                <input type="test" id="收支" value="收入" name="收支" style="display:none" />
 
                 <div align="center" style="position:relative;top:440px ">                                                                                                
                 <input type="submit" value="送出" >
