@@ -48,6 +48,11 @@
             ele.value = symbol;
         }
 
+        function inputExp2(symbol) {
+            ele = document.getElementById("come1");
+            ele.value = symbol;
+        }
+
         /*計算出結果*/
         function giveResult() {
             ele = document.getElementById("result");
@@ -64,6 +69,9 @@
             exp = ele.value.slice(0, end);
             ele.value = exp;
         }
+
+
+
 
     </script>
     <div align="center" style="position:relative;top:150px">
@@ -82,6 +90,8 @@
 
                 <input type="test" id="come" name="come" style="display:none" />
 
+                <input type="test" id="come1" name="come1" style="display:none" />
+
                 <div align="center" style="position:relative;top:400px ">                                                                                                
                 <input type="submit" value="送出" >
                 </div>                                   
@@ -92,8 +102,11 @@
 
        
         <tr>
- 
-            <td> <input type="button" id="eat" value="吃" style = "width: 65px; height: 65px; border-radius:50% ;border: none; position:relative;top:-50px "  onclick=" inputExp1('吃')" /></td>
+            <td> <input type="button" id="aa" value="收入"   onclick="inputExp2('收入')" /></td>
+            <td> <input type="button" id="bb" value="支出"   onclick=" inputExp2('支出')" /></td>
+
+
+            <td> <input type="button" id="eat" value="吃" style = "width: 65px; height: 65px; border-radius:50% ;border: none; position:relative;top:-50px "  onclick="inputExp1('吃')" /></td>
             <td> <input type="button" id="drink" value="喝" style = "width: 65px; height: 65px; border-radius:50% ;border: none ; position:relative;top:-50px" onclick=" inputExp1('喝')" /></td>
             <td> <input type="button" id="paly" value="玩" style = "width: 65px; height: 65px; border-radius:50% ;border: none ; position:relative;top:-50px " onclick=" inputExp1('玩')" /></td>
             <td> <input type="button" id="happy" value="樂" style = "width: 65px; height: 65px; border-radius:50% ;border: none ; position:relative;top:-50px " onclick=" inputExp1('樂')" /></td>
