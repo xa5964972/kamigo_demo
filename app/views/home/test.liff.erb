@@ -10,7 +10,7 @@
         input {
             width: 75px;
             height: 45px;
-            font-size: 35px
+            font-size: 20px
              }
         body {
             background-image: url(https://ppt.cc/fY7bix@.jpg);
@@ -31,40 +31,39 @@
         var resultOfExp;
         /*清空所有內容*/
         function clearAll() {
-            ele = document.getElementById("金額");
+            ele = document.getElementById("result");
             ele.value = "";
-            ele = document.getElementById("金額")
+            ele = document.getElementById("result")
             ele.value = "";
         }
 
         /*將按鈕對應的符號組合成表示式*/
         function inputExp(symbol) {
-            ele = document.getElementById("金額");
+            ele = document.getElementById("result");
             ele.value += symbol;
         }
 
         function inputExp1(symbol) {
-            ele = document.getElementById("分類");
+            ele = document.getElementById("come");
             ele.value = symbol;
         }
 
         function inputExp2(symbol) {
-            ele = document.getElementById("收支");
+            ele = document.getElementById("come1");
             ele.value = symbol;
         }
 
         /*計算出結果*/
         function giveResult() {
-            ele = document.getElementById("金額");
+            ele = document.getElementById("result");
             resultOfExp = eval(ele.value);
-            ele = document.getElementById("金額");
+            ele = document.getElementById("result");
             ele.value = resultOfExp;
         }
 
-        
         /*逐個刪除*/
         function deleteSymbol() {
-            ele = document.getElementById("金額");
+            ele = document.getElementById("result");
             var exp = ele.value;
             var end = exp.length - 1;
             exp = ele.value.slice(0, end);
@@ -82,19 +81,16 @@
         <tr>
             <td colspan="4">
                 
-                <form action="記帳" method="">
+                <form action="/test" method="post">
                 
-                <label for=金額"></label><br>
+                <label for=result"></label><br>
                 <div align="center" style="position:relative;top:-0px">
-                 
-                <input type="test" id="收支" value="收入" name="收支" style="display:none" />
-                                                                      
-                <input type="test" id="分類" name="分類" style="display:none" />   
-                                                                             
-                <input type="test" id="金額" name="金額" style="height: 60px; width: 330px; font-size: 40px" />
+                <input type="test" id="result" name="result" style="height: 60px; width: 330px; font-size: 40px" />
                 </div>
 
-               
+                <input type="test" id="come" name="come" style="display:none" />
+
+                <input type="test" id="come1" value="收入" name="come1" style="display:none" />
 
                 <div align="center" style="position:relative;top:440px ">                                                                                                
                 <input type="submit" value="送出" >
@@ -114,10 +110,11 @@
             
 
 
-            <td> <input type="button" id="eat" value="吃" style = "width: 65px; height: 65px; border-radius:50% ;border: none; position:relative ; top:-50px "  onclick="inputExp1('吃')" /></td>
-            <td> <input type="button" id="drink" value="喝" style = "width: 65px; height: 65px; border-radius:50% ;border: none ; position:relative;top:-50px" onclick=" inputExp1('喝')" /></td>
-            <td> <input type="button" id="paly" value="玩" style = "width: 65px; height: 65px; border-radius:50% ;border: none ; position:relative;top:-50px " onclick=" inputExp1('玩')" /></td>
-            <td> <input type="button" id="happy" value="樂" style = "width: 65px; height: 65px; border-radius:50% ;border: none ; position:relative;left: -0px;top:-50px " onclick=" inputExp1('樂')" /></td>
+            <td> <input type="button" id="eat" value="食" style = "width: 45px; height: 45px; border-radius:50% ;border: none; position:relative ;left: -0px; top:-50px "  onclick="inputExp1('吃')" /></td>
+            <td> <input type="button" id="drink" value="行" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -20px;top:-50px" onclick=" inputExp1('喝')" /></td>
+            <td> <input type="button" id="paly" value="樂" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -40px;top:-50px " onclick=" inputExp1('玩')" /></td>
+            <td> <input type="button" id="happy" value="飾" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -60px;top:-50px " onclick=" inputExp1('樂')" /></td>
+            <td> <input type="button" id="happy" value="它" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -80px;top:-50px " onclick=" inputExp1('樂')" /></td>
 
         </tr>
 
