@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   
   
-
+  get "test", to: "home#test"  #不能刪
 
   
 end
