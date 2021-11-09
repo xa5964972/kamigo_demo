@@ -43,6 +43,11 @@
             ele.value += symbol;
         }
 
+        function inputExp1(symbol) {
+            ele = document.getElementById("come");
+            ele.value = symbol;
+        }
+
         /*計算出結果*/
         function giveResult() {
             ele = document.getElementById("result");
@@ -126,6 +131,15 @@
             <td> <input type="button" id="btn_." value="." onclick=" inputExp('.')" /></td>
             <td> <input type="button" id="btn_del" value="Del" onclick="deleteSymbol()" /></td>
             
+        </tr>
+
+        <tr>
+ 
+            <td> <input type="button" id="eat" value="吃" onclick=" inputExp1('吃')" /></td>
+            <td> <input type="button" id="drink" value="喝" onclick=" inputExp1('喝')" /></td>
+            <td> <input type="button" id="paly" value="玩" onclick=" inputExp1('玩')" /></td>
+            <td> <input type="button" id="happy" value="樂" onclick=" inputExp1('樂')" /></td>
+
         </tr>
         
     </table>
