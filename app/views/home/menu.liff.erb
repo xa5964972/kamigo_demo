@@ -1,1 +1,61 @@
 
+<a href="/">首頁</a> <br/>
+<a href="/menu">目錄頁</a> <br/>
+<a href="/todos">Todo</a> <br/>
+<a href="https://kamigo-demo.herokuapp.com">網站首頁</a> <br/>
+<a href="https://line.me/R/ti/p/%40wnf1580w">聊天機器人</a> <br/>
+<br/>
+<a href="https://line.me/R/nv/QRCodeReader">QRCode Scanner</a> <br/>
+<br/>
+<br/>
+<%= link_to("開啟另一個 LIFF", safe_liff_path(path: '/menu')) %><br/>
+<br/>
+<br/>
+<button id="liff-send-message">send test message</button><br/>
+<br/>
+<div id="liff-info"></div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<script>
+async function getLiffInfo(){
+  const os = liff.getOS()
+  const language = liff.getLanguage()
+  const liffVersion = liff.getVersion()
+  const lineVersion = liff.getLineVersion()
+  const isInClient = liff.isInClient()
+  const isLoggedIn = liff.isLoggedIn()
+  const context = liff.getContext()
+  const profile = await liff.getProfile().catch(a=>a)
+  const friendship = await liff.getFriendship().catch(a=>a)
+
+  return {
+    os,
+    language,
+    liffVersion,
+    lineVersion,
+    isInClient,
+    isLoggedIn,
+    context,
+    profile,
+    friendship,
+  }
+}
+
+window.addEventListener("liff_ready", async function(){
+  const liffInfo = await getLiffInfo();
+  const info = JSON.stringify(liffInfo, null, 2).replaceAll("  ","　").replaceAll("\n","<br/>");
+  $("#liff-info").html(info);
+
+  $("#liff-send-message").click(async function(){
+    const response = await liff.sendMessages([{
+      type: 'text',
+      text: 'menu'
+    }]).catch(a=>a)
+  })
+});
+
+</script>
