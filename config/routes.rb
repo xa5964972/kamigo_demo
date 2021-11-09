@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 # menu
   
   
-  get "test", to: "home#test"  #不能刪
+  
 
 
   
