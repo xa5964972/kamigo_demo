@@ -13,7 +13,7 @@
             font-size: 20px
              }
         body {
-            background-image: url(https://ppt.cc/f3iVDx@.jpg);
+            background-image: url(https://ppt.cc/fY7bix@.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -46,11 +46,63 @@
         function inputExp1(symbol) {
             ele = document.getElementById("分類");
             ele.value = symbol;
+            if (symbol == "樂"){
+            document.getElementById("樂").style.backgroundColor = "#EDEDED";
+            document.getElementById("行").style.backgroundColor = "#FFC863";
+            document.getElementById("食").style.backgroundColor = "#FFC863";
+            document.getElementById("飾").style.backgroundColor = "#FFC863";
+            document.getElementById("它").style.backgroundColor = "#FFC863";
+            }
+            if (symbol == "行"){
+            document.getElementById("樂").style.backgroundColor = "#FFC863";
+            document.getElementById("行").style.backgroundColor = "#EDEDED";
+            document.getElementById("食").style.backgroundColor = "#FFC863";
+            document.getElementById("飾").style.backgroundColor = "#FFC863";
+            document.getElementById("它").style.backgroundColor = "#FFC863";
+            }
+            if (symbol == "飾"){
+            document.getElementById("樂").style.backgroundColor = "#FFC863";
+            document.getElementById("行").style.backgroundColor = "#FFC863";
+            document.getElementById("食").style.backgroundColor = "#FFC863";
+            document.getElementById("飾").style.backgroundColor = "#EDEDED";
+            document.getElementById("它").style.backgroundColor = "#FFC863";
+            }
+            if (symbol == "食"){
+            document.getElementById("樂").style.backgroundColor = "#FFC863";
+            document.getElementById("行").style.backgroundColor = "#FFC863";
+            document.getElementById("食").style.backgroundColor = "#EDEDED";
+            document.getElementById("飾").style.backgroundColor = "#FFC863";
+            document.getElementById("它").style.backgroundColor = "#FFC863";
+            }
+            if (symbol == "它"){
+            document.getElementById("樂").style.backgroundColor = "#FFC863";
+            document.getElementById("行").style.backgroundColor = "#FFC863";
+            document.getElementById("食").style.backgroundColor = "#FFC863";
+            document.getElementById("飾").style.backgroundColor = "#FFC863";
+            document.getElementById("它").style.backgroundColor = "#EDEDED";
+            }             
+
         }
 
         function inputExp2(symbol) {
             ele = document.getElementById("收支");
             ele.value = symbol;
+            if (symbol == "它"){
+            document.getElementById("樂").style.backgroundColor = "#FFC863";
+            document.getElementById("行").style.backgroundColor = "#FFC863";
+            document.getElementById("食").style.backgroundColor = "#FFC863";
+            document.getElementById("飾").style.backgroundColor = "#FFC863";
+            document.getElementById("它").style.backgroundColor = "#EDEDED";
+            }
+            if (symbol == "它"){
+            document.getElementById("樂").style.backgroundColor = "#FFC863";
+            document.getElementById("行").style.backgroundColor = "#FFC863";
+            document.getElementById("食").style.backgroundColor = "#FFC863";
+            document.getElementById("飾").style.backgroundColor = "#FFC863";
+            document.getElementById("它").style.backgroundColor = "#EDEDED";
+            }                      
+
+
         }
 
         /*計算出結果*/
@@ -113,11 +165,11 @@
             
 
 
-            <td> <input type="button" id="食" value="食" style = "width: 45px; height: 45px; border-radius:50% ;border: none; position:relative ;left: -0px; top:-50px "  onclick="inputExp1('食')" /></td>
-            <td> <input type="button" id="行" value="行" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -20px;top:-50px" onclick=" inputExp1('行')" /></td>
-            <td> <input type="button" id="樂" value="樂" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -40px;top:-50px " onclick=" inputExp1('樂')" /></td>
-            <td> <input type="button" id="飾" value="飾" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -60px;top:-50px " onclick=" inputExp1('飾')" /></td>
-            <td> <input type="button" id="它" value="它" style = "width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -80px;top:-50px " onclick=" inputExp1('它')" /></td>
+            <td> <input type="button" id="食" value="食" style = "background-color:#FFC863;width: 45px; height: 45px; border-radius:50% ;border: none; position:relative ;left: -0px; top:-50px "  onclick="inputExp1('食')" /></td>
+            <td> <input type="button" id="行" value="行" style = "background-color:#FFC863 ; width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -20px;top:-50px" onclick=" inputExp1('行')" /></td>
+            <td> <input type="button" id="樂" value="樂" style = "background-color:#FFC863 ; width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -40px;top:-50px " onclick=" inputExp1('樂')" /></td>
+            <td> <input type="button" id="飾" value="飾" style = "background-color:#FFC863 ; width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -60px;top:-50px " onclick=" inputExp1('飾')" /></td>
+            <td> <input type="button" id="它" value="它" style = "background-color:#FFC863 ; width: 45px; height: 45px; border-radius:50% ;border: none ; position:relative;left: -80px;top:-50px " onclick=" inputExp1('它')" /></td>
 
         </tr>
 
