@@ -87,19 +87,19 @@
         function inputExp2(symbol) {
             ele = document.getElementById("收支");
             ele.value = symbol;
-            if (symbol == "它"){
-            document.getElementById("樂").style.backgroundColor = "#FFC863";
-            document.getElementById("行").style.backgroundColor = "#FFC863";
-            document.getElementById("食").style.backgroundColor = "#FFC863";
-            document.getElementById("飾").style.backgroundColor = "#FFC863";
-            document.getElementById("它").style.backgroundColor = "#EDEDED";
+            if (symbol == "收入"){
+            document.getElementById("樂").value= "零";
+            document.getElementById("行").value= "獎";
+            document.getElementById("食").value= "薪";
+            document.getElementById("飾").value= "投";
+            document.getElementById("它").value= "它";
             }
-            if (symbol == "它"){
-            document.getElementById("樂").style.backgroundColor = "#FFC863";
-            document.getElementById("行").style.backgroundColor = "#FFC863";
-            document.getElementById("食").style.backgroundColor = "#FFC863";
-            document.getElementById("飾").style.backgroundColor = "#FFC863";
-            document.getElementById("它").style.backgroundColor = "#EDEDED";
+            if (symbol == "支出"){
+            document.getElementById("樂").value= "樂";
+            document.getElementById("行").value= "行";
+            document.getElementById("食").value= "食";
+            document.getElementById("飾").value= "飾";
+            document.getElementById("它").value= "它";
             }                      
 
 
@@ -147,7 +147,7 @@
                 </div>
 
 
-                <div align="center" style="position:relative;top:390px ">                                                                                                
+                <div align="center" style="position:relative;left:10;top:390px ">                                                                                                
                 <input type="submit" value="送出" >
                 </div>                                   
                 </form>
