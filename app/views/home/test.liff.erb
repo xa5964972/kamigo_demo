@@ -44,6 +44,10 @@
         }
 
         /*將按鈕對應的符號組合成表示式*/
+        function Time() {
+            ele = document.getElementById("時間");
+            ele.value = document.getElementById("time").value;
+        }
         function inputExp(symbol) {
             ele = document.getElementById("金額");
             ele.value += symbol;
@@ -164,7 +168,7 @@
                 </div>
                 <div align="center" style="position:relative;left:85px;top:26px">
                 <input type="test" placeholder="備註" id="備註" name="備註" style="height: 70px; width: 140px; font-size: 30px" />
-                <input type="test" id="時間" value=document.getElementById("time") name="時間" style="display:none" />                                                                                                           
+                <input type="test" id="時間" value=Time name="時間" style="display:none" />                                                                                                           
                 </div>
 
 
