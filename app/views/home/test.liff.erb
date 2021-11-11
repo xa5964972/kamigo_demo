@@ -91,7 +91,6 @@
             ele.value = symbol;
             if (symbol == "收入"){
             document.getElementById("食").style.backgroundColor = "#EDEDED";
-            document.getElementById("食").style.backgroundColor = "#EDEDED";
             document.getElementById("樂").style.backgroundColor = "#FFC863";
             document.getElementById("行").style.backgroundColor = "#FFC863";
             document.getElementById("飾").style.backgroundColor = "#FFC863";
@@ -101,9 +100,10 @@
             document.getElementById("食").value= "薪";
             document.getElementById("飾").value= "投";
             document.getElementById("它").value= "它";
+            ele = document.getElementById("分類");
+            ele.value = document.getElementById('薪').value;
             }
             if (symbol == "支出"){
-            document.getElementById("食").style.backgroundColor = "#EDEDED";
             document.getElementById("食").style.backgroundColor = "#EDEDED";
             document.getElementById("樂").style.backgroundColor = "#FFC863";
             document.getElementById("行").style.backgroundColor = "#FFC863";
@@ -114,7 +114,8 @@
             document.getElementById("食").value= "食";
             document.getElementById("飾").value= "飾";
             document.getElementById("它").value= "它";
-           
+            ele = document.getElementById("分類");
+            ele.value = document.getElementById('食').value;
             }                      
 
 
