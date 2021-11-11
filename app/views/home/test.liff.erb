@@ -28,7 +28,10 @@
 </head>
 
 <body>
-    <input type="datetime-local" name="bdaytime">
+    <input type=date id=e>
+    <script>
+    document.getElementById('e').value = new Date().toISOString().substring(0, 20);
+    </script>
     <script type="text/javascript">
         var ele; //用於獲取元件
         var resultOfExp;
