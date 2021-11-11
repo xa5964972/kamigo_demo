@@ -88,7 +88,7 @@
 
         function inputExp2(symbol) {
             ele = document.getElementById("收支");
-            ele.value = symbol;
+            
             if (symbol == "收入"){
             document.getElementById("樂").value= "零";
             document.getElementById("行").value= "獎";
@@ -102,6 +102,7 @@
             document.getElementById("食").value= "食";
             document.getElementById("飾").value= "飾";
             document.getElementById("它").value= "它";
+            ele.value = document.getElementById("樂").value;
             }                      
 
 
