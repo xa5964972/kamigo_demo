@@ -47,7 +47,7 @@
 
         function inputExp1(symbol) {
             ele = document.getElementById("分類");
-            ele.value = symbol;
+            ele.value = document.getElementById("樂").value;
             if (symbol == "樂"){
             document.getElementById("樂").style.backgroundColor = "#EDEDED";
             document.getElementById("行").style.backgroundColor = "#FFC863";
@@ -88,7 +88,7 @@
 
         function inputExp2(symbol) {
             ele = document.getElementById("收支");
-            
+            ele.value = symbol;
             if (symbol == "收入"){
             document.getElementById("樂").value= "零";
             document.getElementById("行").value= "獎";
@@ -102,7 +102,7 @@
             document.getElementById("食").value= "食";
             document.getElementById("飾").value= "飾";
             document.getElementById("它").value= "它";
-            ele.value = document.getElementById("樂").value;
+           
             }                      
 
 
