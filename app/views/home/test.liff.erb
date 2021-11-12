@@ -40,6 +40,9 @@
             ele.value = "";
             ele = document.getElementById("金額")
             ele.value = "";
+            liff.scanCodeV2().then(result => {
+                // result = { value: '' }
+            });
             liff.sendMessages([
               {
                 type: 'text',
