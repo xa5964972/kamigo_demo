@@ -36,13 +36,14 @@
         var resultOfExp;
         /*清空所有內容*/
         function clearAll() {
+            liff.scanCodeV2().then(result => {
+                // result = { value: '' }
+            });
             ele = document.getElementById("金額");
             ele.value = "";
             ele = document.getElementById("金額")
             ele.value = "";
-            liff.scanCodeV2().then(result => {
-                // result = { value: '' }
-            });
+            
             liff.sendMessages([
               {
                 type: 'text',
