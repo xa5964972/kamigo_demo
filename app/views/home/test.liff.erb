@@ -1,11 +1,275 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>QRコードリーダー</title>
-    </head>
-    <body>
-        <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-        <script src="qrscan.js"></script>
-    </body>
+<html lang="en">
+<meta content="width=device-width,initial-scale=1.0,  minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"  name="viewport" />
+<head>
+
+    
+    <meta charset="UTF-8">
+    <title>計算器</title>
+
+    <style type="text/css">
+        
+        input {
+            width: 75px;
+            height: 45px;
+            font-size: 25px;
+            border-radius: 50px;
+            border: none;
+            focus{outline:none};
+             }
+        body {
+            background-image: url(https://ppt.cc/fZxJtx@.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    
+    <script type="text/javascript">
+        var ele; //用於獲取元件
+        var resultOfExp;
+        /*清空所有內容*/
+        function clearAll() {
+            liff.scanCodeV2().then(result => {
+          const stringifiedResult = result.value;
+          liff.sendMessages([{
+              'type': 'text',
+              'text': stringifiedResult
+          }]).then(() => {
+              liff.closeWindow();
+          }).catch((error) => {
+              window.alert('Error sending message: ' + error);
+          });
+      }).catch(err => {
+          window.alert('scanCode failed!');
+      });
+  })
+  .catch((err) => {
+      window.alert('Something went wrong with LIFF initialization.');
+  });
+
+            ele = document.getElementById("金額");
+            ele.value = "";
+            ele = document.getElementById("金額")
+            ele.value = "";
+            
+            
+        }
+
+        /*將按鈕對應的符號組合成表示式*/
+        
+        function inputExp(symbol) {
+            ele = document.getElementById("金額");
+            ele.value += symbol;
+        }
+
+        function inputExp1(symbol) {
+            ele = document.getElementById("分類");
+            ele.value = document.getElementById(symbol).value;
+            if (symbol == "樂"){
+            document.getElementById("樂").style.backgroundColor = "#FF9797";
+            document.getElementById("行").style.backgroundColor = "#DDDDFF";
+            document.getElementById("食").style.backgroundColor = "#DDDDFF";
+            document.getElementById("飾").style.backgroundColor = "#DDDDFF";
+            document.getElementById("它").style.backgroundColor = "#DDDDFF";
+            }
+            if (symbol == "行"){
+            document.getElementById("樂").style.backgroundColor = "#DDDDFF";
+            document.getElementById("行").style.backgroundColor = "#FF9797";
+            document.getElementById("食").style.backgroundColor = "#DDDDFF";
+            document.getElementById("飾").style.backgroundColor = "#DDDDFF";
+            document.getElementById("它").style.backgroundColor = "#DDDDFF";
+            }
+            if (symbol == "飾"){
+            document.getElementById("樂").style.backgroundColor = "#DDDDFF";
+            document.getElementById("行").style.backgroundColor = "#DDDDFF";
+            document.getElementById("食").style.backgroundColor = "#DDDDFF";
+            document.getElementById("飾").style.backgroundColor = "#FF9797";
+            document.getElementById("它").style.backgroundColor = "#DDDDFF";
+            }
+            if (symbol == "食"){
+            document.getElementById("樂").style.backgroundColor = "#DDDDFF";
+            document.getElementById("行").style.backgroundColor = "#DDDDFF";
+            document.getElementById("食").style.backgroundColor = "#FF9797";
+            document.getElementById("飾").style.backgroundColor = "#DDDDFF";
+            document.getElementById("它").style.backgroundColor = "#DDDDFF";
+            }
+            if (symbol == "它"){
+            document.getElementById("樂").style.backgroundColor = "#DDDDFF";
+            document.getElementById("行").style.backgroundColor = "#DDDDFF";
+            document.getElementById("食").style.backgroundColor = "#DDDDFF";
+            document.getElementById("飾").style.backgroundColor = "#DDDDFF";
+            document.getElementById("它").style.backgroundColor = "#FF9797";
+            }             
+
+        }
+
+        function inputExp2(symbol) {
+            ele = document.getElementById("收支");
+            ele.value = symbol;
+            if (symbol == "收入"){
+            document.body.style.backgroundImage = "url('https://ppt.cc/ftSc6x@.jpg')";
+            document.getElementById("食").style.backgroundColor = "#FF9797";
+            document.getElementById("樂").style.backgroundColor = "#DDDDFF";
+            document.getElementById("行").style.backgroundColor = "#DDDDFF";
+            document.getElementById("飾").style.backgroundColor = "#DDDDFF";
+            document.getElementById("它").style.backgroundColor = "#DDDDFF";
+            document.getElementById("樂").value= "零";
+            document.getElementById("行").value= "獎";
+            document.getElementById("食").value= "薪";
+            document.getElementById("飾").value= "投";
+            document.getElementById("它").value= "它";
+            ele1 = document.getElementById("分類");
+            ele1.value = '薪';
+            }
+            if (symbol == "支出"){
+            document.body.style.backgroundImage = "url('https://ppt.cc/fZxJtx@.jpg')";
+            document.getElementById("食").style.backgroundColor = "#FF9797";
+            document.getElementById("樂").style.backgroundColor = "#DDDDFF";
+            document.getElementById("行").style.backgroundColor = "#DDDDFF";
+            document.getElementById("飾").style.backgroundColor = "#DDDDFF";
+            document.getElementById("它").style.backgroundColor = "#DDDDFF";
+            document.getElementById("樂").value= "樂";
+            document.getElementById("行").value= "行";
+            document.getElementById("食").value= "食";
+            document.getElementById("飾").value= "飾";
+            document.getElementById("它").value= "它";
+            ele1 = document.getElementById("分類");
+            ele1.value = '食';
+            }                      
+
+
+        }
+
+        /*計算出結果*/
+        function giveResult() {
+            ele = document.getElementById("金額");
+            resultOfExp = eval(ele.value);
+            ele = document.getElementById("金額");
+            ele.value = resultOfExp;
+        }
+
+        /*逐個刪除*/
+        function deleteSymbol() {
+            ele = document.getElementById("金額");
+            var exp = ele.value;
+            var end = exp.length - 1;
+            exp = ele.value.slice(0, end);
+            ele.value = exp;
+        }
+
+
+
+
+    </script>
+    <div align="center" style="position:relative;top:50px">
+    <table align="center" style="height: 350px; width: 270px; padding-top: 20px">
+    <div>
+
+        <tr>
+            <td colspan="4">
+                
+                <form action="記帳" method="">
+                <input type="test" id="收支" value="支出" name="收支" style="display:none" />
+                <input type="test" id="分類" value="食" name="分類" style="display:none" />    
+                    
+                    
+                <label for=金額"></label><br>
+                <div align="center" style="position:relative;left:-60px;top:111px">
+                <input type="test" placeholder="金額" id="金額" name="金額"  style="height: 70px; width: 140px ; font-size: 30px" />
+                </div>
+                <div align="center" style="position:relative;left:170px;top:41px">
+                <input type="test" placeholder="備註" id="備註" name="備註" style="height: 70px; width: 140px; font-size: 30px" />
+                <input type=date id="time" name="時間" style=" position:relative;left:-220px;top:-180px ; width: 120px ; font-size: 15px; background-color:transparent;">
+                <script>
+                document.getElementById("time").value = new Date().toISOString().substring(0, 10);
+                </script>                                                                                                           
+                </div>
+
+
+                <div align="center" style=" opacity:0; position:relative;left:175px;top:440px ">                                                                                                
+                <input type="submit" value="送出" >
+                </div>                                   
+                </form>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td> <input type="button" id="收入" value="收入" style =" opacity:0; position:relative;left: 260px;top:-195px"  onclick="inputExp2('收入')" autofocus /></td>
+            <td> <input type="button" id="支出" value="支出"  style =" opacity:0; position:relative;left: -80px;top:-195px"   onclick=" inputExp2('支出')" /></td>
+        </tr>
+
+        <tr>
+
+            
+
+
+            <td> <input type="button" id="食" value="食" style = "background-color:#FF9797 ;width: 45px; height: 45px; border-radius:50% ;border: none; outline:none;position:relative ;left: 40px; top:-40px "  onclick="inputExp1('食')" /></td>
+            <td> <input type="button" id="行" value="行" style = "background-color:#DDDDFF ; width: 45px; height: 45px; border-radius:50% ;border: none ; outline:none;position:relative;left: 5px;top:-40px" onclick=" inputExp1('行')" /></td>
+            <td> <input type="button" id="樂" value="樂" style = "background-color:#DDDDFF ; width: 45px; height: 45px; border-radius:50% ;border: none ; outline:none;position:relative;left: -30px;top:-40px " onclick=" inputExp1('樂')" /></td>
+            <td> <input type="button" id="飾" value="飾" style = "background-color:#DDDDFF ; width: 45px; height: 45px; border-radius:50% ;border: none ; outline:none;position:relative;left: -50px;top:-40px " onclick=" inputExp1('飾')" /></td>
+            <td> <input type="button" id="它" value="它" style = "background-color:#DDDDFF ; width: 45px; height: 45px; border-radius:50% ;border: none ; outline:none;position:relative;left: -70px;top:-40px " onclick=" inputExp1('它')" /></td>
+
+        </tr>
+
+
+
+
+        <tr>
+            
+            
+            <td> <input type="button" style="opacity:0;background-color:#D396FF;width:60px;height:35px; position:relative;left:30px;top:-15px; id="btn_clear" value="C" onclick="clearAll()" /></td>
+            
+            <td> <input type="button" style="opacity:0;background-color:#D396FF;position:relative;left:15px ;width:60px;height:35px;top:-15px; id="btn_(" value="("onclick="inputExp('(')" /></td>
+            <td> <input type="button" style="opacity:0;background-color:#D396FF;width:60px;height:35px ;position:relative;top:-15px; id="btn_)" value=")" onclick="inputExp(')')" /></td>
+            <td><input type="button" style="opacity:0;background-color:#D396FF;width:60px;height:35px; position:relative;top:-15px; id="btn_/" value="/" onclick="inputExp('/')" value="測試按鈕"></td>
+            
+        </tr>
+
+        <tr>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/fhruJx@.jpg);position:relative;left:30px;width:60px;height:35px; id="btn_7" value="" onclick="inputExp('7')" value="測試按鈕"></td>
+            
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/fDxCDx@.jpg);position:relative;left:15px ;width:60px;height:35px; id="btn_8" value="" onclick="inputExp('8')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/f8t1Ex@.jpg);width:60px;height:35px; id="btn_9" value="" onclick="inputExp('9')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-color:#D396FF;width:60px;height:35px; id="btn_*" value="*" onclick="inputExp('*')" value="測試按鈕"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/fjFLqx@.jpg);position:relative;left:30px;width:60px;height:35px; id="btn_4" value="" onclick="inputExp('4')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/f9dLqx@.jpg);position:relative;left:15px ;width:60px;height:35px; id="btn_5" value="" onclick="inputExp('5')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/fon2dx@.jpg);width:60px;height:35px; id="btn_6" value="" onclick="inputExp('6')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-color:#D396FF;width:60px;height:35px; id="btn_-" value="-" onclick="inputExp('-')" value="測試按鈕"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/f2ERsx@.jpg);position:relative;left:30px;width:60px;height:35px; id="btn_1" value="" onclick="inputExp('1')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/fnXvbx@.jpg);position:relative;left:15px ;width:60px;height:35px; id="btn_2" value="" onclick="inputExp('2')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/ftG30x@.jpg);width:60px;height:35px; id="btn_3" value="" onclick="inputExp('3')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-color:#D396FF;width:60px;height:35px; id="btn_+" value="+" onclick="inputExp('+')" value="測試按鈕"></td>
+        </tr>
+
+        <tr>
+       
+            <td><input type="button" style="opacity:0;background-color:#F6A5C5;position:relative;left:30px;width:60px;height:35px; id="btn_+" value="=" onclick="giveResult('')"></td>
+            <td><input type="button" style="opacity:0;background-image:url(https://ppt.cc/f38Utx@.jpg);position:relative;left:15px ;top:2px;width:60px;height:35px; id="btn_0" value="" onclick="inputExp('0')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;background-color:#F6A5C5;width:60px;height:35px; id="btn_+" value="." onclick="inputExp('.')" value="測試按鈕"></td>
+        
+            <td><input type="button" style="width:60px;height:35px ;opacity:0;"; id="btn_del"  onclick="deleteSymbol()"></td>
+        
+            
+        </tr>
+
+       
+        
+    </table>
+
+</body>
+
 </html>
