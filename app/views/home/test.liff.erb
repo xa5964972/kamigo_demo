@@ -19,7 +19,7 @@ async function scanCodeV2() {
       });
         
         const result = await liff.scanCodeV2();
-        a=result.value
+        a=result.value()
         
         liff.sendMessages([
         {
@@ -54,6 +54,9 @@ async function scanCodeV2() {
   </script><script src="https://static.line-scdn.net/liff/edge/2/non-ios-extensions.js" type="text/javascript"></script>
   <button onclick="scanCodeV2()">QR Code Reader</button>
   <div id="autoclickme">
+    <a onclick="scanCodeV2()">Onload Autoclick me !!</a>
+</div>
+ <div id="autoclickme">
     <a onclick="scanCodeV2()">Onload Autoclick me !!</a>
 </div>
 </body></html>
