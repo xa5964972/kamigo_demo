@@ -19,21 +19,10 @@
     }
   </style>
 </head>
-
- 
-<body onload = " scanCodeV2()">
-  <div id="container">
-    
-   
-  </div>
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  <script type="text/javascript">
-    
-  
-
-     
-
-   try {
+ <script>
+  window.onload=scanCodeV2;
+async function scanCodeV2() {
+      try {
         var liffID = '1656609726-7anN2L1G';
 
 liff.init({
@@ -47,9 +36,7 @@ liff.init({
   console.log(error);
 });
         
-        liff.scanCodeV2().then(result => {
-        // result = { value: '' }
-      });
+        const result = await liff.scanCodeV2();
         a = result.value;
         
         liff.sendMessages([
@@ -62,6 +49,23 @@ liff.init({
       } catch (error) {
         console.log('scanCodeV2', error);
       }
+    }
+
+ </script> 
+ 
+<body onload = " scanCodeV2()">
+  <div id="container">
+    
+   
+  </div>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script type="text/javascript">
+    
+  
+
+     
+
+  
       
     
   
