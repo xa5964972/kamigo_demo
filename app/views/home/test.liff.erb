@@ -17,15 +17,10 @@
               'text': stringifiedResult
           }]).then(() => {
               liff.closeWindow();
-          }).catch((error) => {
-              window.alert('Error sending message: ' + error);
-          });
-      }).catch(err => {
-          window.alert('scanCode failed!');
+         
       });
-  })
-  .catch((err) => {
-      window.alert('Something went wrong with LIFF initialization.');
   });
+  
+  
 </body>
 </html>
