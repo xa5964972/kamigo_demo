@@ -20,7 +20,7 @@
   </style>
 </head>
 <script>
-
+   <button onclick="scanCodeV2()">QR Code Reader</button>
   </script>
 <body>
   <div id="container">
@@ -30,9 +30,14 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script type="text/javascript">
     
-  liff.scanCodeV2().then(result => {
-      // result = { value: '' }
-    });
+  async function scanCodeV2() {
+      try {
+        const result = await liff.scanCodeV2();
+        document.querySelector('#result').innerHTML = result.value;
+      } catch (error) {
+        console.log('scanCodeV2', error);
+      }
+    }
 
     var liffID = '1656609726-7anN2L1G';
 
