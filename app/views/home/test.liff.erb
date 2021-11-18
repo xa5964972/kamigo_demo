@@ -20,7 +20,7 @@
   </style>
 </head>
 <script>
-liff.init({ liffId: '1656609726-7anN2L1G' });
+
   </script>
 <body>
   <div id="container">
@@ -37,6 +37,19 @@ liff.init({ liffId: '1656609726-7anN2L1G' });
         console.log('scanCodeV2', error);
       }
     }
+    async function main () {
+  try {
+    await liff.init({
+      liffId: "1656609726-7anN2L1G" // 請用自己的 liffId
+    })
+    // 從這裡開始使用 liff 的 API
+  } catch (err) {
+    // 發生錯誤
+    console.log(err.code, err.message)
+    alert(err.message)
+  }
+}
+main() // 最後別忘記要執行 main
   
       
     
