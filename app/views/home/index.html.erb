@@ -1,68 +1,24 @@
-<div class="container">
-  <br/>
-  <h3>網站建立成功</h3>
-  <hr/><br/>
+<HTML>
+<HEAD>
+<TITLE>語法測試版</TITLE>
+</HEAD>
+<BODY>
 
-  <h6>LINE 串接資訊</h6>
-  <table class="table table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">名稱</th>
-        <th scope="col">網址</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row">LINE Messaging API Webhook URL</td>
-        <td><%= request.base_url %>/line</td>
-      </tr>
-      <tr>
-        <td scope="row">LINE Login API LIFF Endpoint URL</td>
-        <td><%= request.base_url %>/liff_entry</td>
-      </tr>
-      <tr>
-        <td scope="row">LINE Login API Callback URL</td>
-        <td><%= user_line_omniauth_callback_url %></td>
-      </tr>
-    </tbody>
-  </table>
-  <hr/><br/>
+<script>
+liff.sendMessages([
+  {
+    type: 'text',
+    text: 'Hello, World!'
+  }
+])
+  .then(() => {
+    console.log('message sent');
+  })
+  .catch((err) => {
+    console.log('error', err);
+  });
 
-  <% if env_setup_info.present? %>
-    <h6>環境變數設定</h6>
-    <table class="table table-hover">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">待設定的環境變數</th>
-          <th scope="col">說明</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% env_setup_info.each do |info| %>
-        <tr>
-          <td scope="row"><%= info[:env_name] %></td>
-          <td><%= "你可以在 #{info[:channel_name]} 的 #{info[:channel_tab]} 找到 #{info[:field_name]}" %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <hr/><br/>
-  <% else %>
-    <h6>圖文選單設定</h6>
-    <table class="table table-hover">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">名稱</th>
-          <th scope="col">網址</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td scope="row">分享機器人</td>
-          <td><%= safe_liff_path(path: "/share_bot", liff_size: :compact) %></td>
-        </tr>
-      </tbody>
-    </table>
-    <hr/><br/>
-  <% end %>
-</div>
+
+</script>
+</BODY>
+</HTML>
