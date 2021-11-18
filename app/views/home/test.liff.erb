@@ -40,13 +40,17 @@ liff.sendMessages([
         aab = result.value;
             
          liff.sendMessages([
-         {
-            type: 'text',
-            text: 'aakhjkhjb'
-          }]); 
-          liff.closeWindow();
-      
-    }
+        {
+          type: 'text',
+          text: 'Hello, World!'
+        }
+      ])
+        .then(() => {
+          console.log('message sent');
+        })
+        .catch((err) => {
+          console.log('error', err);
+        });
     
       
     
