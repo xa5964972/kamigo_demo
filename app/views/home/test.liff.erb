@@ -29,7 +29,17 @@
   </div>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-    async function scanCodeV2() {
+    
+
+
+    var liffID = '1656609726-7anN2L1G';
+
+liff.init({
+  liffId: liffID
+}).then(function() {
+  console.log('LIFF init');
+  
+  async function scanCodeV2() {
       try {
         const result = await liff.scanCodeV2();
         document.querySelector('#result').innerHTML = result.value;
@@ -37,9 +47,10 @@
         console.log('scanCodeV2', error);
       }
     }
-
-
-    liff.init({liffId:"1656609726-7anN2L1G"})
+  
+}).catch(function(error) {
+  console.log(error);
+});
  
 
   
