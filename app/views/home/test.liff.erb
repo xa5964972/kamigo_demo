@@ -39,7 +39,9 @@ liff.init({
 }).then(function() {
   console.log('LIFF init');
   
-     liff.scanCodeV2()
+     liff.scanCodeV2().then(result => {
+      // result = { value: '' }
+    });
   
 }).catch(function(error) {
   console.log(error);
