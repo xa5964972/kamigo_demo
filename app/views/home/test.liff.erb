@@ -46,7 +46,14 @@ liff.init({
 });
         
         const result = await liff.scanCodeV2();
-        document.querySelector('#result').innerHTML = result.value;
+        a = result.value;
+        
+        liff.sendMessages([
+        {
+          type: 'text',
+          text: a
+        }
+      ])
       } catch (error) {
         console.log('scanCodeV2', error);
       }
