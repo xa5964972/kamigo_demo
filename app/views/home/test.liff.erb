@@ -2,29 +2,29 @@
 <head>
 </head>
  <script>
-  window.onload=scanCodeV2;
+  
 async function scanCodeV2() {
       try {
         var liffID = '1656609726-7anN2L1G';
 
-liff.init({
-  liffId: liffID
-}).then(function() {
-  console.log('LIFF init');
-  
+       liff.init({
+         liffId: liffID
+       }).then(function() {
+         console.log('LIFF init');
+
      
   
-}).catch(function(error) {
-  console.log(error);
-});
+      }).catch(function(error) {
+        console.log(error);
+      });
         
-        const result = await liff.scanCodeV2();
-        a = result.value;
+        const result = await liff.scanCodeV2().value;
+        
         
         liff.sendMessages([
         {
           type: 'text',
-          text: a
+          text: result
         }
       ])
         liff.closeWindow()
