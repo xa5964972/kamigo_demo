@@ -30,7 +30,9 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script type="text/javascript">
     
-
+  liff.scanCodeV2().then(result => {
+      // result = { value: '' }
+    });
 
     var liffID = '1656609726-7anN2L1G';
 
@@ -39,9 +41,7 @@ liff.init({
 }).then(function() {
   console.log('LIFF init');
   
-     liff.scanCodeV2().then(result => {
-      // result = { value: '' }
-    });
+     
   
 }).catch(function(error) {
   console.log(error);
