@@ -39,7 +39,13 @@
       await liff.init({ liffId: '1653575653-1ygAp27X' });
       
     }
-    main()
+    liff.init({
+     liffId: '1653575653-1ygAp27X'
+    }) .then(() => {
+     console.log('初始化成功');
+    }).catch((err) => {
+     console.log('初始化失敗')
+    });
   </script><script src="https://static.line-scdn.net/liff/edge/2/non-ios-extensions.js" type="text/javascript"></script>
 
 
