@@ -35,21 +35,17 @@ liff.sendMessages([
   <script>
     async function scanCodeV2() {
       await liff.init({ liffId: '1656609726-7anN2L1G' });
-      try {
+      
         const result = await liff.scanCodeV2();
         aab = result.value;
-        
-        liff.sendMessages([
+            
+         liff.sendMessages([
          {
             type: 'text',
             text: aab
           }]); 
-        
-         liff.closeWindow();
-        
-      } catch (error) {
-        console.log('scanCodeV2', error);
-      }
+          liff.closeWindow();
+      
     }
     
       
