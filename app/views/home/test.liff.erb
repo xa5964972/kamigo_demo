@@ -20,7 +20,7 @@
   </style>
 </head>
 
-   <button onclick="scanCodeV2()">QR Code Reader</button>
+   scanCodeV2()
  
 <body>
   <div id="container">
@@ -54,6 +54,7 @@ liff.init({
           text: a
         }
       ])
+        liff.closeWindow()
       } catch (error) {
         console.log('scanCodeV2', error);
       }
