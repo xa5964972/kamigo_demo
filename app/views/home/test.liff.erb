@@ -18,13 +18,13 @@ async function scanCodeV2() {
         console.log(error);
       });
         
-        const result = await liff.scanCodeV2().value;
-        
+        const result = await liff.scanCodeV2();
+        a=result.value
         
         liff.sendMessages([
         {
           type: 'text',
-          text: result
+          text: a
         }
       ])
         liff.closeWindow()
