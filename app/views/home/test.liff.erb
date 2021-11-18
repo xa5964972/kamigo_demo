@@ -32,14 +32,7 @@
     
   async function scanCodeV2() {
       try {
-        const result = await liff.scanCodeV2();
-        document.querySelector('#result').innerHTML = result.value;
-      } catch (error) {
-        console.log('scanCodeV2', error);
-      }
-    }
-
-    var liffID = '1656609726-7anN2L1G';
+        var liffID = '1656609726-7anN2L1G';
 
 liff.init({
   liffId: liffID
@@ -51,6 +44,15 @@ liff.init({
 }).catch(function(error) {
   console.log(error);
 });
+        
+        const result = await liff.scanCodeV2();
+        document.querySelector('#result').innerHTML = result.value;
+      } catch (error) {
+        console.log('scanCodeV2', error);
+      }
+    }
+
+    
  
 
   
