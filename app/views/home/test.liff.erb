@@ -1,25 +1,43 @@
-<!DOCTYPE html> 
-<head>
+<html style="color-scheme: light; --liff-base-background-color:#FFFFFF; --liff-base-text-color:#000000; --liff-base-background-rgb-color:255, 255, 255; --liff-base-text-rgb-color:0, 0, 0; --liff-light-button-border-color:rgba(0, 0, 0, 0.15); --liff-title-text-color:#111111; --liff-title-background-color:#FFFFFF; --liff-title-button-color:#111111; --liff-icon-color:#111111; --liff-status-bar-color:black; --liff-title-subtext-color:#B7B7B7; --liff-progress-bar-color:#06C755; --liff-progress-background-color:#FFFFFF; --liff-title-button-area-background-color:rgba(255, 255, 255, 0.12); --liff-title-button-area-border-color:rgba(0, 0, 0, 0.15);"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <meta http-equiv="cleartype" content="on">
+  <title>liff.scanCodeV2()</title>
+  <link rel="shortcut icon" href="https://mokmoon.com/favicon.ico">
+  <link rel="apple-touch-icon" href="https://mokmoon.com/images/firebase.png">
+  <style>
+    #container {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+    }
+  </style>
 </head>
  <script>
-  
+  window.onload=scanCodeV2;
 async function scanCodeV2() {
       try {
         var liffID = '1656609726-7anN2L1G';
 
-       liff.init({
-         liffId: liffID
-       }).then(function() {
-         console.log('LIFF init');
-
+liff.init({
+  liffId: liffID
+}).then(function() {
+  console.log('LIFF init');
+  
      
   
-      }).catch(function(error) {
-        console.log(error);
-      });
+}).catch(function(error) {
+  console.log(error);
+});
         
         const result = await liff.scanCodeV2();
-        a=result.value()
+        a = result.value;
         
         liff.sendMessages([
         {
@@ -53,10 +71,4 @@ async function scanCodeV2() {
   
   </script><script src="https://static.line-scdn.net/liff/edge/2/non-ios-extensions.js" type="text/javascript"></script>
   <button onclick="scanCodeV2()">QR Code Reader</button>
-  <div id="autoclickme">
-    <a onclick="scanCodeV2()">Onload Autoclick me !!</a>
-</div>
- <div id="autoclickme">
-    <a onclick="scanCodeV2()">Onload Autoclick me !!</a>
-</div>
 </body></html>
