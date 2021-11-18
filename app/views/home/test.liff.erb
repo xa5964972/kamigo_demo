@@ -10,16 +10,10 @@
 <body>
     <script type="text/javascript">
 
-      liff.scanCodeV2().then(result => {
-          const stringifiedResult = result.value;
-          liff.sendMessages([{
+      liff.sendMessages([{
               'type': 'text',
-              'text': stringifiedResult
-          }]).then(() => {
-              liff.closeWindow();
-         
-      });
-  });
+              'text': '123'
+          }])
 </script>
   
 </body>
