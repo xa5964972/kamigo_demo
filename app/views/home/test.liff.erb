@@ -9,23 +9,17 @@
   <script>
     async function scanCodeV3() {
       await liff.init({ liffId: '1656609726-7anN2L1G' });
-      
-        const result = await liff.scanCode();
+        
+        const result = await liff.scanCodeV2();
         aab = result.value;
-            
+         
          liff.sendMessages([
         {
           type: 'text',
           text: aab
         }
       ])
-        .then(() => {
-          console.log('message sent');
-        })
-        .catch((err) => {
-          console.log('error', err);
-        });
-      
+        
     }
       scanCodeV3();
     
