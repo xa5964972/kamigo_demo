@@ -32,19 +32,9 @@
         await liff.init({ liffId: '1656609726-7anN2L1G' });
         const result = await liff.scanCodeV2();
         document.querySelector('#result').innerHTML = result.value;
-        var button = document.querySelector('.popuptest');
-        var showtxt = document.querySelector('.show');
-
-        function popup2(e) {
-            window.confirm('ConfirmBox測試成功嗎');
-            if (confirm('ConfirmBox測試成功嗎') == true) {
-                showtxt.innerHTML = 'Yes，測試成功';
-            } else {
-                showtxt.innerHTML = '您已取消確認';
-            }
+        window.confirm("彈跳視窗想要顯示的文字");
       
-    
-    }
+      }
      
 </script>
 
