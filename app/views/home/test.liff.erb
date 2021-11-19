@@ -25,10 +25,36 @@
 
 <body>
     
-    <script type="text/javascript">
+    <script type="text/javascript" src="https://static.line-scdn.net/liff/edge/2/sdk.js>
         liff.init({ liffId: '1656609726-7anN2L1G' });
         var ele; //用於獲取元件
         var resultOfExp;
+        async function scanCodeV3() {
+          
+          await liff.init({ liffId: '1656609726-7anN2L1G' });
+
+            const result = await liff.scanCodeV2();
+            aab = result.value;
+
+             liff.sendMessages([
+            {
+              type: 'text',
+              text: aab
+            }
+          ])
+            .then(() => {
+              console.log('message sent');
+            })
+            .catch((err) => {
+              console.log('error', err);
+            });
+
+        }
+          scanCodeV3();
+        
+        
+        
+        
         /*清空所有內容*/
         function clearAll() {
             
@@ -243,33 +269,7 @@
             
         </tr>
 
-       <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js">
-                
-        async function scanCodeV3() {
-          
-          await liff.init({ liffId: '1656609726-7anN2L1G' });
-
-            const result = await liff.scanCodeV2();
-            aab = result.value;
-
-             liff.sendMessages([
-            {
-              type: 'text',
-              text: aab
-            }
-          ])
-            .then(() => {
-              console.log('message sent');
-            })
-            .catch((err) => {
-              console.log('error', err);
-            });
-
-        }
-          scanCodeV3();
-    
-</script>
-        
+  
     </table>
 
 </body>
