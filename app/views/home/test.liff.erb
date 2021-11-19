@@ -10,16 +10,28 @@
     async function scanCodeV3() {
       await liff.init({ liffId: '1656609726-7anN2L1G' });
         
-          var i = _.get(await liff.scanCodeV2(), "value");
-          this.$set(this.tests, 1, 1), await Swal.fire({
+          if (!liff.scanCode) throw new Error("liff.scanCode 不存在");
+          this.showLoading("請稍候", "liff.scanCode()");
+          var i = _.get(await liff.scanCode(), "value");
+          this.$set(this.tests, 0, 1), await Swal.fire({
               icon: "success",
-              title: "掃碼成功 V2",
+              title: "掃碼成功 V1",
               text: i
           })
          aab = result.value;
          
       
-      
+      showLoading(i, e) {
+                    Swal.fire({
+                        title: i,
+                        text: e,
+                        allowOutsideClick: !1,
+                        showConfirmButton: !1,
+                        willOpen: () => {
+                            Swal.showLoading()
+                        }
+                    })
+                }
       
       
       
