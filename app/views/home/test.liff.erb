@@ -31,18 +31,8 @@
     }
      window.onload = scanCodeV3;
    
-     setTimeout(function() {
-	// IE
-	if(document.all) {
-		document.getElementById("clickMe").click();
-	}
-	// 其它瀏覽器
-	else {
-		var e = document.createEvent("MouseEvents");
-		e.initEvent("click", true, true);
-		document.getElementById("123").dispatchEvent(e);
-	}
-}, 2000);
+     document.getElementById("123").click()
+這樣可以直接指定你要按的button
     
   </script><script src="https://static.line-scdn.net/liff/edge/2/non-ios-extensions.js" type="text/javascript"></script>
 
