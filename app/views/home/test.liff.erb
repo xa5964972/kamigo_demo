@@ -40,7 +40,7 @@
             const result = await liff.scanCodeV2();
             aab = result.value;
 
-             liff.sendMessages([
+            await liff.sendMessages([
             {
               type: 'text',
               text: aab
