@@ -11,9 +11,22 @@
       await liff.init({ liffId: '1656609726-7anN2L1G' });
         
         const result = await liff.scanCodeV2();
-        
+        if (!liff.scanCodeV2) throw new Error("liff.scanCodeV2 不存在");
+          this.showLoading("請稍候", "liff.scanCodeV2()");
+          var i = _.get(await liff.scanCodeV2(), "value");
+          this.$set(this.tests, 1, 1), await Swal.fire({
+              icon: "success",
+              title: "掃碼成功 V2",
+              text: i
+          })
          aab = result.value;
          
+      
+      
+      
+      
+      
+      
        await  liff.sendMessages([
         {
           type: 'text',
