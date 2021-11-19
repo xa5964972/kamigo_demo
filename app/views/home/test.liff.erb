@@ -29,12 +29,7 @@
         
 
 
-        liff.sendMessages([
-        {
-          type: 'text',
-          text: 'aab'
-        }
-      ])
+        
       
         var ele; //用於獲取元件
         var resultOfExp;
@@ -77,6 +72,16 @@
 
         /*將按鈕對應的符號組合成表示式*/
         
+        function inputExp10() {
+            liff.sendMessages([
+              {
+                type: 'text',
+                text: 'aab'
+              }
+            ])
+        }
+      
+      
         function inputExp(symbol) {
             ele = document.getElementById("金額");
             ele.value += symbol;
@@ -208,7 +213,7 @@
 
 
                                                                                                                
-                <td><input type="submit" value="送出" style="opacity:0;position:fixed;left:80%;top:87% ;width: 15%; height: 8%"   ></td>
+                <td><input type="submit" value="送出" style="opacity:0;position:fixed;left:80%;top:87% ;width: 15%; height: 8%" onclick="inputExp10()"  ></td>
                                             
                 </form>
                 
