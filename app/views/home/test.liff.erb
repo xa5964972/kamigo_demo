@@ -28,14 +28,13 @@
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     async function scanCodeV2() {
-      try {
+      
         await liff.init({ liffId: '1656609726-7anN2L1G' });
         const result = await liff.scanCodeV2();
         document.querySelector('#result').innerHTML = result.value;
-      } catch (error) {
-        console.log('scanCodeV2', error);
-      }
-    }
+     
+      
+    
     }
      
 
