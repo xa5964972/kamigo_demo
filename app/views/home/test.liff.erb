@@ -27,21 +27,11 @@
   </div>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-    async function scanCodeV2() {
-      try {
-        const result = await liff.scanCodeV2();
-        document.querySelector('#result').innerHTML = result.value;
-      } catch (error) {
-        console.log('scanCodeV2', error);
-      }
-    }
-    async function main() {
-      await liff.init({ liffId: '1656609726-7anN2L1G' });
-      if (!liff.isLoggedIn()) {
-        liff.login();
-      }
-    }
-    main();
+  
+        liff.scanCodeV2();
+
+
+ 
   </script><script src="https://static.line-scdn.net/liff/edge/2/non-ios-extensions.js" type="text/javascript"></script>
 
 
