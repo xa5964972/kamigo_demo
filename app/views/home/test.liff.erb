@@ -11,12 +11,12 @@
       await liff.init({ liffId: '1656609726-7anN2L1G' });
       
         const result = await liff.scanCode();
-        aab = result.value;
+        document.querySelector('#result').innerHTML = result.value;
             
          liff.sendMessages([
         {
           type: 'text',
-          text: aab
+          text: result.value
         }
       ])
         .then(() => {
