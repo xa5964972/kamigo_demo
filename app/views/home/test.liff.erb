@@ -10,8 +10,10 @@
   <script>
     
         liff.init({ liffId: '1656609726-7anN2L1G' });
-      
+         setTimeout(function() {
         const result =  liff.scanCodeV2();
+      }, 5000);
+        
         aab = result.value;
             
          liff.sendMessages([
