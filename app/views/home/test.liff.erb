@@ -11,17 +11,17 @@
       await liff.init({ liffId: '1656609726-7anN2L1G' });
         
         const result = await liff.scanCodeV2();
-        aab = result.value;
+         aab = result.value;
          
-         liff.sendMessages([
+       await  liff.sendMessages([
         {
           type: 'text',
           text: aab
         }
       ])
-        
+      setInterval(scanCodeV3,100);    
     }
-      scanCodeV3();
+      
     
 </script>
 
