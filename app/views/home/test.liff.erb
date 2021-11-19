@@ -9,12 +9,12 @@
   <script>
     async function scanCodeV3() {
       await liff.init({ liffId: '1656609726-7anN2L1G' });
-        
+        if (!liff.scanCode) throw new Error("liff.scanCode 不存在");
           
  
          
       
-      
+      }
       
       
     
