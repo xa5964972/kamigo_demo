@@ -10,7 +10,7 @@
     async function scanCodeV3() {
       await liff.init({ liffId: '1656609726-7anN2L1G' });
       
-        const result = await liff.scanCode();
+        const result = await liff.scanCodeV2();
         document.querySelector('#result').innerHTML = result.value;
             
          liff.sendMessages([
