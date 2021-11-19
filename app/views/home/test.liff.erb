@@ -31,8 +31,8 @@
       
         await liff.init({ liffId: '1656609726-7anN2L1G' });
         const result = await liff.scanCodeV2();
-        document.querySelector('#result').innerHTML = result.value;
-        window.confirm("彈跳視窗想要顯示的文字");
+        await document.querySelector('#result').innerHTML = result.value;
+        window.confirm(result.value);
       
       }
      
