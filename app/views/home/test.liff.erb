@@ -1,36 +1,43 @@
-<head>
+<html style="color-scheme: light; --liff-base-background-color:#FFFFFF; --liff-base-text-color:#000000; --liff-base-background-rgb-color:255, 255, 255; --liff-base-text-rgb-color:0, 0, 0; --liff-light-button-border-color:rgba(0, 0, 0, 0.15); --liff-title-text-color:#111111; --liff-title-background-color:#FFFFFF; --liff-title-button-color:#111111; --liff-icon-color:#111111; --liff-status-bar-color:black; --liff-title-subtext-color:#B7B7B7; --liff-progress-bar-color:#06C755; --liff-progress-background-color:#FFFFFF; --liff-title-button-area-background-color:rgba(255, 255, 255, 0.12); --liff-title-button-area-border-color:rgba(0, 0, 0, 0.15);"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <meta http-equiv="cleartype" content="on">
+  <title>liff.scanCodeV2()</title>
+  <link rel="shortcut icon" href="https://mokmoon.com/favicon.ico">
+  <link rel="apple-touch-icon" href="https://mokmoon.com/images/firebase.png">
+  <style>
+    #container {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
   <div id="container">
-    <button onclick="scanCodeV3()">QR Code Reader</button>
+    <h3 id="result">Something is going to happen here...</h3>
+    <button onclick="scanCodeV2()">QR Code Reader</button>
   </div>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-    async function scanCodeV3() {
-      await liff.init({ liffId: '1656609726-7anN2L1G' });
-      
+    async function scanCodeV2() {
+      try {
+        await liff.init({ liffId: '1656609726-7anN2L1G' });
         const result = await liff.scanCodeV2();
         document.querySelector('#result').innerHTML = result.value;
-        aab = result.value;
-            
-         liff.sendMessages([
-        {
-          type: 'text',
-          text: aab
-        }
-      ])
-        .then(() => {
-          console.log('message sent');
-        })
-        .catch((err) => {
-          console.log('error', err);
-        });
-      scanCodeV3();
+      } catch (error) {
+        console.log('scanCodeV2', error);
+      }
     }
       
-    
-</script>
+     
 
 
 </body></html>
