@@ -72,7 +72,9 @@
 
         /*將按鈕對應的符號組合成表示式*/
         
-        function inputExp10() {
+       async function inputExp10() {
+         
+         await liff.init({ liffId: '1656609726-7anN2L1G' });
             liff.sendMessages([
               {
                 type: 'text',
