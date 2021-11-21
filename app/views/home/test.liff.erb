@@ -2,10 +2,10 @@
 <html lang="en">
 <meta content="width=device-width,initial-scale=1.0,  minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"  name="viewport" />
 <head>
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  
     
     <meta charset="UTF-8">
-    <title>計算器</title>
+    
     
     
     <style type="text/css">
@@ -25,7 +25,7 @@
 
 <body>
     
-    <script type="text/javascript" >
+    <script  src="https://static.line-scdn.net/liff/edge/2/sdk.js" type="text/javascript" >
         
 
 
@@ -65,7 +65,7 @@
             
         }
 
-        /*將按鈕對應的符號組合成表示式*/
+        
         
        async function inputExp10() {
          
@@ -163,7 +163,7 @@
 
         }
 
-        /*計算出結果*/
+        
         function giveResult() {
             ele = document.getElementById("金額");
             resultOfExp = eval(ele.value);
@@ -171,7 +171,7 @@
             ele.value = resultOfExp;
         }
 
-        /*逐個刪除*/
+       
         function deleteSymbol() {
             ele = document.getElementById("金額");
             var exp = ele.value;
@@ -181,7 +181,8 @@
         }
 
 
-
+    a=new Date(+new Date() + 8 * 3600 * 1000)
+    document.getElementById("time").value = a.toISOString().substring(0, 10);
 
     </script>
     <div align="center" style="position:relative;top:50px">
@@ -203,10 +204,7 @@
                 
                 <input type="test" placeholder="備註" id="備註" name="備註" style="position:fixed;left:50%;top:25% ;width: 35%;height: 8% ; font-size: 200%;" />
                 <input type=date id="time" name="時間" style="position:fixed;left:35%;top:4% ;width: 30%;height: 8%; font-size: 100%; background-color:transparent; border: none; outline:none;">
-                <script>
-                a=new Date(+new Date() + 8 * 3600 * 1000)
-                document.getElementById("time").value = a.toISOString().substring(0, 10);
-                </script>                                                                                                           
+                                            
              
 
 
@@ -242,41 +240,41 @@
         <tr>
             
             
-            <td> <input type="button" style="opacity:0;position:fixed;left:11%;top:48%;width: 15%; height: 4%; id="btn_clear" value="C" onclick="clearAll()" /></td>   
-            <td> <input type="button" style="opacity:0;position:fixed;left:31%;top:48%;width: 15%; height: 4%; id="btn_(" value="("onclick="inputExp('(')" /></td>
-            <td> <input type="button" style="opacity:0;position:fixed;left:50%;top:48%;width: 15%; height: 4%; id="btn_)" value=")" onclick="inputExp(')')" /></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:48%;width: 15%; height: 4%; id="btn_/" value="/" onclick="inputExp('/')" value="測試按鈕"></td>
+            <td> <input type="button" style="opacity:0;position:fixed;left:11%;top:48%;width: 15%; height: 4%;  onclick="clearAll()" /></td>   
+            <td> <input type="button" style="opacity:0;position:fixed;left:31%;top:48%;width: 15%; height: 4%;  onclick="inputExp('(')" /></td>
+            <td> <input type="button" style="opacity:0;position:fixed;left:50%;top:48%;width: 15%; height: 4%;   onclick="inputExp(')')" /></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:48%;width: 15%; height: 4%;   onclick="inputExp('/')" value="測試按鈕"></td>
             
         </tr>
 
         <tr>
-            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:56% ;width: 15%; height: 4%; id="btn_7" value="" onclick="inputExp('7')" value="測試按鈕"></td>         
-            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:56% ;width: 15%; height: 4%; id="btn_8" value="" onclick="inputExp('8')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:56% ;width: 15%; height: 4%; id="btn_9" value="" onclick="inputExp('9')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:56% ;width: 15%; height: 4%; id="btn_*" value="*" onclick="inputExp('*')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:56% ;width: 15%; height: 4%;   onclick="inputExp('7')"></td>         
+            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:56% ;width: 15%; height: 4%;   onclick="inputExp('8')"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:56% ;width: 15%; height: 4%;   onclick="inputExp('9')" ></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:56% ;width: 15%; height: 4%;   onclick="inputExp('*')" ></td>
         </tr>
 
         <tr>
-            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:64%; width: 15%; height: 4%; id="btn_4" value="" onclick="inputExp('4')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:64%; width: 15%; height: 4%; id="btn_5" value="" onclick="inputExp('5')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:64%; width: 15%; height: 4%; id="btn_6" value="" onclick="inputExp('6')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:64%; width: 15%; height: 4%; id="btn_-" value="-" onclick="inputExp('-')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:64%; width: 15%; height: 4%;  onclick="inputExp('4')"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:64%; width: 15%; height: 4%;  onclick="inputExp('5')" ></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:64%; width: 15%; height: 4%;   onclick="inputExp('6')" ></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:64%; width: 15%; height: 4%;  onclick="inputExp('-')"></td>
         </tr>
 
         <tr>
-            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:71% ;width: 15%; height: 4%; id="btn_1" value="" onclick="inputExp('1')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:71% ;width: 15%; height: 4%; id="btn_2" value="" onclick="inputExp('2')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:71% ;width: 15%; height: 4%; id="btn_3" value="" onclick="inputExp('3')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:71% ;width: 15%; height: 4%;   id="btn_+"  onclick="inputExp('+')" "></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:71% ;width: 15%; height: 4%;  onclick="inputExp('1')" ></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:71% ;width: 15%; height: 4%;   onclick="inputExp('2')" ></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:71% ;width: 15%; height: 4%;  onclick="inputExp('3')"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:69%;top:71% ;width: 15%; height: 4%;    onclick="inputExp('+')" "></td>
         </tr>
 
         <tr>
        
-            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:78% ;width: 15%; height: 4%; id="btn_+" value="=" onclick="giveResult('')"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:78% ;width: 15%; height: 4%; id="btn_0" value="" onclick="inputExp('0')" value="測試按鈕"></td>
-            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:78% ;width: 15%; height: 4%; id="btn_+" value="." onclick="inputExp('.')" value="測試按鈕"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:11%;top:78% ;width: 15%; height: 4%; id="btn_+" onclick="giveResult('')"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:31%;top:78% ;width: 15%; height: 4%;  onclick="inputExp('0')"></td>
+            <td><input type="button" style="opacity:0;position:fixed;left:50%;top:78% ;width: 15%; height: 4%;  onclick="inputExp('.')" ></td>
         
-            <td><input type="button" style=" opacity:0;position:fixed;left:69%;top:78% ;width: 15%; height: 4%;"  id="btn_del"  onclick="deleteSymbol()"></td>
+            <td><input type="button" style=" opacity:0;position:fixed;left:69%;top:78% ;width: 15%; height: 4%;"  onclick="deleteSymbol()"></td>
         
             
         </tr>
