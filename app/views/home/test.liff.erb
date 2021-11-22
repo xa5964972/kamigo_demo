@@ -40,7 +40,7 @@
           
           await liff.init({ liffId: '1656609726-7anN2L1G' });
             AV=liff.getOS();
-            if (AV =='iOS' or AV =='iPadOS'){
+            if (AV =='iOS' || AV =='iPadOS'){
             const result = await liff.scanCodeV2();
             aab = result.value;
 
@@ -56,7 +56,10 @@
           else{
             const result = await liff.scanCode();
             aab = result.value;
-
+             
+            
+            
+            if (aab != 'null' ) {
             await liff.sendMessages([
             {
               type: 'text',
@@ -64,8 +67,8 @@
             }
           ]);
            
-           
-            
+           scanCodeV3();
+            }
             
             
           }
