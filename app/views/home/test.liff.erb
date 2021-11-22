@@ -39,8 +39,8 @@
         async function scanCodeV3() {
           
           await liff.init({ liffId: '1656609726-7anN2L1G' });
-            AV=liff.getOS()
-            if AV =='android' or AV =='iPadOS'{
+            AV=liff.getOS();
+            if (AV =='iOS'){
             const result = await liff.scanCodeV2();
             aab = result.value;
 
