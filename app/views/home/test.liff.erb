@@ -34,7 +34,7 @@
 
         
       
-        var ele; //用於獲取元件
+        var ele; 
         var resultOfExp;
         async function scanCodeV3() {
           
@@ -78,18 +78,17 @@
         
         
         
-        /*清空所有內容*/
+        
         function clearAll() {
             
             ele = document.getElementById("金額");
             ele.value = "";
-            ele = document.getElementById("金額")
-            ele.value = "";
+           
             
             
         }
 
-        /*將按鈕對應的符號組合成表示式*/
+       
         
        async function inputExp10() {
          
@@ -187,15 +186,14 @@
 
         }
 
-        /*計算出結果*/
+       
         function giveResult() {
             ele = document.getElementById("金額");
             resultOfExp = eval(ele.value);
-            ele = document.getElementById("金額");
             ele.value = resultOfExp;
         }
 
-        /*逐個刪除*/
+       
         function deleteSymbol() {
             ele = document.getElementById("金額");
             var exp = ele.value;
@@ -233,17 +231,17 @@
                                                                                                                
                 <td><input type="button" value="送出" style="opacity:0;position:fixed;left:80%;top:87% ;width: 15%; height: 8%" onclick="inputExp10()"  ></td>
                                             
-                </form>
+              
                 
             
-        </tr>
         
-        <tr>
+        
+       
             <td> <input type="button" id="收入" value="收入" style="opacity:0;position:fixed;left:72%;top:9% ;width: 15%; height: 8%"  onclick="inputExp2('收入')"  /></td>
             <td> <input type="button" id="支出" value="支出"  style="opacity:0;position:fixed;left:10%;top:10% ;width: 15%; height: 8%" onclick="inputExp2('支出')" /></td>
-        </tr>
+        
 
-        <tr>
+
 
             
 
@@ -254,12 +252,12 @@
             <td> <input type="button" id="飾" value="飾" style = "background-color:#DDDDFF ; border-radius:50% ;border: none ; outline:none;position:fixed;left:57%;top:37% ;width: 12%;height: 6%; font-size: 150%;" onclick=" inputExp1('飾')" /></td>
             <td> <input type="button" id="它" value="它" style = "background-color:#DDDDFF ; border-radius:50% ;border: none ; outline:none;position:fixed;left:72%;top:37% ;width: 12%;height: 6%; font-size: 150%;" onclick=" inputExp1('它')" /></td>
             <td> <input type="button" id="QR" value="QR" style = " opacity:0;background-color:#DDDDFF ; border: none ; outline:none;position:fixed;left:35%;top:12% ;width: 20%;height: 10%; font-size: 150%;" onclick=" scanCodeV3()" /></td>
-        </tr>
+     
 
 
 
 
-        <tr>
+     
             
             
             <td> <input type="button" style="opacity:0;position:fixed;left:11%;top:48%;width: 15%; height: 4%; id="btn_clear"  onclick="clearAll()" /></td>   
@@ -267,30 +265,30 @@
             <td> <input type="button" style="opacity:0;position:fixed;left:50%;top:48%;width: 15%; height: 4%; id="btn_)"  onclick="inputExp(')')" /></td>
             <td><input type="button" style="opacity:0;position:fixed;left:69%;top:48%;width: 15%; height: 4%; id="btn_/"  onclick="inputExp('/')" ></td>
             
-        </tr>
+       
 
-        <tr>
+     
             <td><input type="button" style="opacity:0;position:fixed;left:11%;top:56% ;width: 15%; height: 4%; id="btn_7"  onclick="inputExp('7')" ></td>         
             <td><input type="button" style="opacity:0;position:fixed;left:31%;top:56% ;width: 15%; height: 4%; id="btn_8"  onclick="inputExp('8')" ></td>
             <td><input type="button" style="opacity:0;position:fixed;left:50%;top:56% ;width: 15%; height: 4%; id="btn_9"  onclick="inputExp('9')" ></td>
             <td><input type="button" style="opacity:0;position:fixed;left:69%;top:56% ;width: 15%; height: 4%; id="btn_*"  onclick="inputExp('*')" ></td>
-        </tr>
+       
 
-        <tr>
+        
             <td><input type="button" style="opacity:0;position:fixed;left:11%;top:64%; width: 15%; height: 4%; id="btn_4"  onclick="inputExp('4')" ></td>
             <td><input type="button" style="opacity:0;position:fixed;left:31%;top:64%; width: 15%; height: 4%; id="btn_5"  onclick="inputExp('5')" ></td>
             <td><input type="button" style="opacity:0;position:fixed;left:50%;top:64%; width: 15%; height: 4%; id="btn_6"  onclick="inputExp('6')"></td>
             <td><input type="button" style="opacity:0;position:fixed;left:69%;top:64%; width: 15%; height: 4%; id="btn_-"  onclick="inputExp('-')" ></td>
-        </tr>
+       
 
-        <tr>
+        
             <td><input type="button" style="opacity:0;position:fixed;left:11%;top:71% ;width: 15%; height: 4%; id="btn_1"  onclick="inputExp('1')"></td>
             <td><input type="button" style="opacity:0;position:fixed;left:31%;top:71% ;width: 15%; height: 4%; id="btn_2"  onclick="inputExp('2')" ></td>
             <td><input type="button" style="opacity:0;position:fixed;left:50%;top:71% ;width: 15%; height: 4%; id="btn_3"  onclick="inputExp('3')" ></td>
             <td><input type="button" style="opacity:0;position:fixed;left:69%;top:71% ;width: 15%; height: 4%;  id="btn_+"  onclick="inputExp('+')" "></td>
-        </tr>
+        
 
-        <tr>
+       
        
             <td><input type="button" style="opacity:0;position:fixed;left:11%;top:78% ;width: 15%; height: 4%; id="btn_+"  onclick="giveResult('')"></td>
             <td><input type="button" style="opacity:0;position:fixed;left:31%;top:78% ;width: 15%; height: 4%; id="btn_0"  onclick="inputExp('0')" ></td>
