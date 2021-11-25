@@ -31,6 +31,11 @@
 		audio.src = "https://storage.soundoftext.com/cdce7850-31a8-11ec-94a3-5f80760f9038.mp3";
 		audio.play();
 	      }
+		function yet() {
+		const audio = document.createElement("audio");
+		audio.src = "https://storage.soundoftext.com/64c280b0-4de9-11ec-8516-4931b7e5659d.mp3";
+		audio.play();
+	      }
 	       async function scanCodeV3() {    
 	         await liff.init({ liffId: '1656609726-7anN2L1G' });
 	           AV=liff.getOS();
@@ -89,8 +94,11 @@
 			}
 		     }
 			
-		     	   
-			   
+		  if  (   Number(get.substring(11,14)) > Number(e)   || (   ( Number(get.substring(11,14))  ==  Number(e) ) && ( Number(get.substring(11,14))  >   Number(b[1]) )   )      )  {  
+			
+		       yet();
+			  }
+		  
 			   
 			   
 			   
