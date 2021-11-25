@@ -42,6 +42,14 @@
 		audio.play();
 	      }
 	       async function scanCodeV3() {    
+		  var a=['14872301', '37250799', '085', '821', '911', '916'];
+	          var b=['09', '10'];
+	          var c=['52604932', '20102509', '725', '398', '723', '634'];
+	          var d=['07', '08'];
+	          var e='110';
+	          var f='110';     
+		       
+		       
 	         await liff.init({ liffId: '1656609726-7anN2L1G' });
 	           AV=liff.getOS();
 	           if (AV =='iOS' || AV =='iPadOS'){
@@ -53,6 +61,44 @@
 	             text: aab
 	           }
 	         ]);      
+			   
+		   aab=aab.replace(/\s+/g, '');
+		  get = aab.substring(0,17);
+	        	   
+		  if (b.indexOf(get.substring(13,15))!= -1) {       
+	          
+	          
+	
+			if (get.substring(2,10) == a[0] || get.substring(2,10) == a[1]  ||  get.substring(7,10) ==a[3] || get.substring(7,10) ==a[4]  || get.substring(7,10) ==a[5]){
+			 yes();
+			}
+			else{
+			 no();
+			}
+		     }
+		  if (d.indexOf(get.substring(13,15))!= -1) {       
+	          
+	          
+	
+			if (get.substring(2,10) == c[0] || get.substring(2,10) == c[1]  ||  get.substring(7,10) ==c[3] || get.substring(7,10) ==c[4]  || get.substring(7,10) ==c[5]){
+			 yes();
+			}
+			else{
+			 no();
+			}
+		     }
+			
+		  if  (   Number(get.substring(10,13)) > Number(e)   || (   ( Number(get.substring(10,13))  ==  Number(e) ) && ( Number(get.substring(13,15))  >   Number(b[1]) )   )      )  {  
+			
+		       yet();
+			  }
+			   
+	          if  (   Number(get.substring(10,13)) < Number(f)   || (   ( Number(get.substring(10,13))  ==  Number(f) ) && ( Number(get.substring(13,15))  <   Number(d[1]) )   )      )  {  
+			
+		       loss();
+			  }	   
+			   
+			   
 	           scanCodeV3();
 	           }
 	         else{
@@ -65,18 +111,10 @@
 	             text: aab
 	           }
 	         ]); 
-		  var a=['14872301', '37250799', '085', '821', '911', '916'];
-	          var b=['09', '10'];
-	          var c=['52604932', '20102509', '725', '398', '723', '634'];
-	          var d=['07', '08'];
-	          var e='110';
-	          var f='110';
+		  
 		  aab=aab.replace(/\s+/g, '');
 		  get = aab.substring(0,17);
-	          var b=['09', '10'];
-			   
-		document.getElementById("金額").value= get.substring(2,10);	   
-		document.getElementById("備註").value= get.substring(7,10);	   
+	        	   
 		  if (b.indexOf(get.substring(13,15))!= -1) {       
 	          
 	          
