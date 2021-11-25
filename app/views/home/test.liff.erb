@@ -70,8 +70,9 @@
 	          var c=['52604932', '20102509', '725', '398', '723', '634'];
 	          var d=['07', '08'];
 	          var e='110';
-	          var f='110';	   
-		  get = aab.substring(0,18);
+	          var f='110';
+		  aab.replace(/\s+/g, '')
+		  get = aab.substring(0,17);
 	          var b=['09', '10'];
 			   
 		document.getElementById("金額").value= get.substring(0,1);	   
