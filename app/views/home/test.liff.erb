@@ -26,9 +26,14 @@
 	       var d=['07', '08'];
 	       var e='110';
 	       var f='110';
-               function playAudio() {
+               function no() {
 		const audio = document.createElement("audio");
 		audio.src = "https://storage.soundoftext.com/616ae150-4dd5-11ec-8516-4931b7e5659d.mp3";
+		audio.play();
+	      }
+		function yes() {
+		const audio = document.createElement("audio");
+		audio.src = "https://storage.soundoftext.com/cdce7850-31a8-11ec-94a3-5f80760f9038.mp3";
 		audio.play();
 	      }
 	       async function scanCodeV3() {    
@@ -57,12 +62,22 @@
 	         ]);  
 		  get = aab.substring(0,18);
 	          var b=['09', '10'];
+			   
+			   
+			   
 		  if (b.indexOf(get.substring(14,16))!= -1) {       
 	          playAudio(); 
 	          scanCodeV3();
-	document.getElementById("備註").value=get.substring(13,15);
-        document.getElementById("金額").value=get;
+	document.getElementById("備註").value=get.substring(3,11);
+        document.getElementById("金額").value=a[0];
+			if get.substring(3,11) == a[0]:
 		     }	   
+			   
+			   
+			   
+			   
+			   
+			   
 			   
 			   
 	          scanCodeV3();
