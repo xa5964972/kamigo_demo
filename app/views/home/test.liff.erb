@@ -55,9 +55,9 @@
 	             text: aab
 	           }
 	         ]);  
-		  get = aab.substring(0,17);
+		  get = aab.substring(0,18);
 	          var b=['09', '10'];
-		  if (b.indexOf(get.substring(13,15))== -1) {       
+		  if (b.indexOf(get.substring(14,16))!= -1) {       
 	          playAudio(); 
 	          scanCodeV3();
 	document.getElementById("備註").value=get.substring(13,15);
