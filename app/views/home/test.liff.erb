@@ -55,7 +55,7 @@
 	             text: aab
 	           }
 	         ]); 
-		  var a=['92527602', '37250799', '71086085', '53645821', '46626911', '916'];
+		  var a=['92527602', '37250799', '085', '821', '911', '916'];
 	          var b=['09', '10'];
 	          var c=['52604932', '20102509', '39173725', '34997398', '98953723', '634'];
 	          var d=['07', '08'];
@@ -69,9 +69,9 @@
 		  if (b.indexOf(get.substring(14,16))!= -1) {       
 	          
 	          
-	document.getElementById("備註").value=get.substring(3,11);
+	document.getElementById("備註").value=get.substring(8,11);
         document.getElementById("金額").value=a[0];
-			if (   (get.substring(3,11)) == a[0]  or   (get.substring(3,11) == a[1])  or  (get.substring(3,11) == a[2] or get.substring(3,11) == a[3] or get.substring(3,11) == a[4])  ){
+			if (get.substring(3,11) == a[0] || get.substring(3,11) == a[1]  ||  get.substring(8,11) ==a[3] || get.substring(8,11) ==a[4]  || get.substring(8,11) ==a[5]){
 			 yes();
 			}
 		     }	   
