@@ -18,16 +18,15 @@
 	<input id="收支" name="收支" style="display:none" type="test" value="支出"><input id="分類" name="分類" style="display:none" type="test" value="食"><label for="金額&quot;"></label><br>
 	<input id="金額" name="金額" placeholder="金額" readonly='readonly' style="position:fixed;left:10%;top:25% ;width: 35%;height: 8%; font-size: 200%;" type="test"><input id="備註" name="備註" placeholder="備註" style="position:fixed;left:50%;top:25% ;width: 35%;height: 8% ; font-size: 200%;" type="test"><input id="time" name="時間" style="position:fixed;left:35%;top:4% ;width: 30%;height: 8%; font-size: 100%; background-color:transparent; border: none; outline:none;" type="date">
 	<script defer="defer" type="text/javascript">
-		
 	       var ele; 
 	       var resultOfExp;
-	       var a=['14872301', '37250799', '71086085', '53645821', '46626911', '916']
-	       var b=['09', '10']
-	       var c=['52604932', '20102509', '39173725', '34997398', '98953723', '634']
-	       var d=['07', '08']
-	       var e='110'
-	       var f='110'
-	       function playAudio() {
+	       var a=['14872301', '37250799', '71086085', '53645821', '46626911', '916'];
+	       var b=['09', '10'];
+	       var c=['52604932', '20102509', '39173725', '34997398', '98953723', '634'];
+	       var d=['07', '08'];
+	       var e='110';
+	       var f='110';
+               function playAudio() {
 		const audio = document.createElement("audio");
 		audio.src = "https://storage.soundoftext.com/616ae150-4dd5-11ec-8516-4931b7e5659d.mp3";
 		audio.play();
@@ -44,7 +43,6 @@
 	             text: aab
 	           }
 	         ]);      
-	           if aab[0:17]
 	           scanCodeV3();
 	           }
 	         else{
@@ -56,12 +54,15 @@
 	             type: 'text',
 	             text: aab
 	           }
-	         ]);
-	          get = aab.substring(0,17);
-	          if (b.indexOf(get.substring(13,15))) != '-1'{       
+	         ]);  
+		  get = aab.substring(0,17);	   
+		  if (b.indexOf(get.substring(13,15))!= '-1') {       
 	          playAudio(); 
 	          scanCodeV3();
-		     }
+		     }	   
+			   
+			   
+	          scanCodeV3();
 	           }   
 	         }
 	       }
@@ -107,7 +108,6 @@
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("飾").style.backgroundColor = "#FF9797";
 	           document.getElementById("它").style.backgroundColor = "#DDDDFF";
-			  
 	           }
 	           if (symbol == "食"){
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
