@@ -57,7 +57,7 @@
 	         ]); 
 		  var a=['92527602', '37250799', '085', '821', '911', '916'];
 	          var b=['09', '10'];
-	          var c=['52604932', '20102509', '39173725', '34997398', '98953723', '634'];
+	          var c=['52604932', '20102509', '725', '398', '723', '634'];
 	          var d=['07', '08'];
 	          var e='110';
 	          var f='110';	   
@@ -69,15 +69,27 @@
 		  if (b.indexOf(get.substring(14,16))!= -1) {       
 	          
 	          
-	document.getElementById("備註").value=get.substring(8,11);
-        document.getElementById("金額").value=a[0];
+	
 			if (get.substring(3,11) == a[0] || get.substring(3,11) == a[1]  ||  get.substring(8,11) ==a[3] || get.substring(8,11) ==a[4]  || get.substring(8,11) ==a[5]){
 			 yes();
 			}
 			else{
 			 no();
 			}
-		     }	   
+		     }
+		  if (d.indexOf(get.substring(14,16))!= -1) {       
+	          
+	          
+	
+			if (get.substring(3,11) == c[0] || get.substring(3,11) == c[1]  ||  get.substring(8,11) ==c[3] || get.substring(8,11) ==c[4]  || get.substring(8,11) ==c[5]){
+			 yes();
+			}
+			else{
+			 no();
+			}
+		     }
+			
+		     	   
 			   
 			   
 			   
