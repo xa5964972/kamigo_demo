@@ -2,27 +2,7 @@
 <html lang="en">
 <head>
 	
-	<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase.js">
-		 function aa(){ 
-		  const firebaseConfig = {
-		    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
-		    authDomain: "money-90d4e.firebaseapp.com",
-		    databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com",
-		    projectId: "money-90d4e",
-		    storageBucket: "money-90d4e.appspot.com",
-		    messagingSenderId: "49794645960",
-		    appId: "1:49794645960:web:02f35c06ae03cba6a8cafd",
-		    measurementId: "G-0CF89FP9ZM"
-		  };	
-
-                  firebase.initializeApp(firebaseConfig);
-
-                  var database = firebase.database();
-                  firebase.database().ref().set({name:'jessica',age:10});  
-                   
-                          }
-	           aa();
-	</script>
+	
 	
 	
 	
@@ -43,6 +23,30 @@
 	</style>
 </head>
 <body>
+	
+	<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase.js">
+	 function aa(){ 
+	  const firebaseConfig = {
+	    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
+	    authDomain: "money-90d4e.firebaseapp.com",
+	    databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com",
+	    projectId: "money-90d4e",
+	    storageBucket: "money-90d4e.appspot.com",
+	    messagingSenderId: "49794645960",
+	    appId: "1:49794645960:web:02f35c06ae03cba6a8cafd",
+	    measurementId: "G-0CF89FP9ZM"
+	  };	
+
+	  firebase.initializeApp(firebaseConfig);
+
+	  var database = firebase.database();
+	  firebase.database().ref().set({name:'jessica',age:10});  
+
+		  }
+	   aa();
+	</script>
+	
+	
 	<input id="收支" name="收支" style="display:none" type="test" value="支出"><input id="分類" name="分類" style="display:none" type="test" value="食"><label for="金額&quot;"></label><br>
 	<input id="金額" name="金額" placeholder="金額" readonly='readonly' style="position:fixed;left:10%;top:25% ;width: 35%;height: 8%; font-size: 200%;" type="test"><input id="備註" name="備註" placeholder="備註" style="position:fixed;left:50%;top:25% ;width: 35%;height: 8% ; font-size: 200%;" type="test"><input id="time" name="時間" style="position:fixed;left:35%;top:4% ;width: 30%;height: 8%; font-size: 100%; background-color:transparent; border: none; outline:none;" type="date">
 	<script defer="defer" type="text/javascript">
