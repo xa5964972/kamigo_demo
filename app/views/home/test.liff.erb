@@ -27,9 +27,13 @@
 	<script defer="defer" type="text/javascript">
 	       var ele; 
 	       var resultOfExp;
-	       
-		
-
+	       function aad (){ 
+		 await liff.init({ liffId: '1656609726-7anN2L1G' });
+		  
+		 const idToken = liff.getIDToken();
+		 document.getElementById("飾").value= idToken;
+		  
+	       }
 		
 		 function ad (){ 
 		  const firebaseConfig = {
