@@ -8,7 +8,7 @@
 		  
 		liff.getProfile()
 		.then(profile => {
-		  id=profile.userId
+		  ID=profile.userId
 		  document.getElementById("備註").value=profile.userId;
 		})
 		.catch((err) => {
@@ -17,7 +17,7 @@
 		
 		
 	  var id = new Array(1); 
-	  var value = new Array(id); 
+	  var value = new Array(ID); 
 	  var select = document.getElementById("area"); 
 	  select.length = 1;
 	  select.options[0].selected = true;
