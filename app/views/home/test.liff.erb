@@ -32,10 +32,11 @@
 		  var database = firebase.database();
 		  firebase.database().ref('/'+profile.userId+'/a').once('value',function(snapshot){
 			  
-	          console.log(snapshot.val());
-	         
-	          var id = new Array(1,2,3); 
-		  var value = new Array(snapshot.val().toString(),profile.userId,"例項教程"); 
+	          
+	          cat=snapshot.val().toString().split(';')[1].toString().split(' ')
+	          console.log(cat);
+	          var id = new Array(1,2,3,4,5,6); 
+		  var value = new Array(cat); 
 		  var select = document.getElementById("area"); 
 		  select.length = 1;
 		  select.options[0].selected = true;
