@@ -24,27 +24,9 @@
 </head>
 <body>
 	
-	<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase.js">
-	 function aa(){ 
-	  const firebaseConfig = {
-	    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
-	    authDomain: "money-90d4e.firebaseapp.com",
-	    databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com",
-	    projectId: "money-90d4e",
-	    storageBucket: "money-90d4e.appspot.com",
-	    messagingSenderId: "49794645960",
-	    appId: "1:49794645960:web:02f35c06ae03cba6a8cafd",
-	    measurementId: "G-0CF89FP9ZM"
-	  };	
-
-	  firebase.initializeApp(firebaseConfig);
-
-	  var database = firebase.database();
-	  firebase.database().ref().set({name:'jessica',age:10});  
-
-		  }
-	   aa();
-	</script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase.js"></script>
+	 
+	
 	
 	
 	<input id="收支" name="收支" style="display:none" type="test" value="支出"><input id="分類" name="分類" style="display:none" type="test" value="食"><label for="金額&quot;"></label><br>
@@ -53,6 +35,29 @@
 	       var ele; 
 	       var resultOfExp;
 	       
+		function aa(){ 
+		  const firebaseConfig = {
+		    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
+		    authDomain: "money-90d4e.firebaseapp.com",
+		    databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com",
+		    projectId: "money-90d4e",
+		    storageBucket: "money-90d4e.appspot.com",
+		    messagingSenderId: "49794645960",
+		    appId: "1:49794645960:web:02f35c06ae03cba6a8cafd",
+		    measurementId: "G-0CF89FP9ZM"
+		  };	
+
+		  firebase.initializeApp(firebaseConfig);
+
+		  var database = firebase.database();
+		  firebase.database().ref().set({name:'jessica',age:10});  
+
+			  }
+		   aa();
+
+		
+		
+		
                function no() {
 		const audio = document.createElement("audio");
 		audio.src = "https://storage.soundoftext.com/616ae150-4dd5-11ec-8516-4931b7e5659d.mp3";
