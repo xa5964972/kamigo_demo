@@ -30,10 +30,13 @@
 	      async function aad (){ 
 		 await liff.init({ liffId: '1656609726-7anN2L1G' });
 		  
-		 liff.getProfile()
+		liff.getProfile()
 		.then(profile => {
-		  const name = profile.userId
+		  const name = profile.displayName
 		})
+		.catch((err) => {
+		  console.log('error', err);
+		});
 		 document.getElementById("備註").value=name;
 		  
 	       }
