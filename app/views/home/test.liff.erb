@@ -30,8 +30,8 @@
 	      async function aad (){ 
 		 await liff.init({ liffId: '1656609726-7anN2L1G' });
 		  
-		 const idToken = liff.getIDToken();
-		 document.getElementById("備註").value=profile.userid;
+		 const idToken = liff.profile.userid;
+		 document.getElementById("備註").value=idToken;
 		  
 	       }
 		
