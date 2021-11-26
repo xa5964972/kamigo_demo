@@ -3,36 +3,34 @@
 <head>
 		
 	<script type="text/javascript"> 
-	async function setFun(){ 
-	await liff.init({ liffId: '1656609726-7anN2L1G' });
+		
+		async function setFun(){ 
+		 await liff.init({ liffId: '1656609726-7anN2L1G' });
 		  
 		liff.getProfile()
 		.then(profile => {
-		  ID=profile.userId
-		  
+		  ID=profile.userId;
+		  document.getElementById("備註").value=profile.userId;
 		})
 		.catch((err) => {
 		  console.log('error', err);
 		});	
-		
-		
-	  var id = new Array(1); 
-	  var value = new Array('123'); 
-	  var select = document.getElementById("area"); 
-	  select.length = 1;
-	  select.options[0].selected = true;
-	  document.getElementById("備註").value=ID;
-	  for(var x = 0;x<id.length;x++){ 
-	    var option = document.createElement("option"); 
-	    option.setAttribute("value",id[x]);
-	    option.appendChild(document.createTextNode(value[x])); 
-	    select.appendChild(option);
-	  } 
-	} 
-	
-	
-	
-	</script>
+			
+		  var id = new Array(1,2,3); 
+		  var value = new Array("JavaScript專區",ID,"例項教程"); 
+		  var select = document.getElementById("area"); 
+		  select.length = 1;
+		  select.options[0].selected = true;
+		  for(var x = 0;x<id.length;x++){ 
+		    var option = document.createElement("option"); 
+		    option.setAttribute("value",id[x]);
+		    option.appendChild(document.createTextNode(value[x])); 
+		    select.appendChild(option);
+		  } 
+		} 
+
+
+</script>
 	
 	
 	
@@ -302,7 +300,7 @@
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("飾").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("它").style.backgroundColor = "#FF9797";
-	           aad();
+	           setFun()
 	           }             
 	       }
 	       function inputExp2(symbol) {
