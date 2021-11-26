@@ -36,8 +36,9 @@
 	          cat=snapshot.val().toString().split(';')[1].toString().split(' ')
 	          console.log(cat);
 	          var id = [];
-	          
-		   id=id.push('i');
+	          for (var i=0; i<cat.lenght; i++){
+		   id=id.push(i);
+		  }
 		  console.log(id);
 		  var value = cat; 
 		  var select = document.getElementById("area"); 
