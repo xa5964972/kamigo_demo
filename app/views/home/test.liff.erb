@@ -310,8 +310,9 @@
 		   
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;     
-		   var val = obj.options[index].value;    
-		   obj.options[index].value= symbol   
+		    
+		   obj.options[index].value= symbol;
+		   var val = obj.options[index].value;   
 	           ele = document.getElementById("分類");
 	           ele.value = document.getElementById(symbol).value;
 		   ele.value = val;
