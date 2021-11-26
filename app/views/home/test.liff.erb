@@ -24,7 +24,9 @@
 	  firebase.initializeApp(firebaseConfig);
 
 	  var database = firebase.database();
-	  firebase.database().ref().set({name:'jessica',age:10});  
+	  firebase.database().ref().once('value',function(snapshot){
+     console.log(snapshot.val());
+})
 
 		  }
 	   
