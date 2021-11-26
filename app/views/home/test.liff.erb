@@ -307,11 +307,11 @@
 	           ele.value += symbol;
 	       }
 	       function inputExp1(symbol) {
-		   document.getElementById("area").value = symbol;
+		   
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;     
 		   var val = obj.options[index].value;    
-		       
+		   obj.options[index].value= symbol   
 	           ele = document.getElementById("分類");
 	           ele.value = document.getElementById(symbol).value;
 		   ele.value = val;
