@@ -30,9 +30,10 @@
 		  
 
 		  var database = firebase.database();
-		  firebase.database().ref().once('value',function(snapshot){
-	     console.log(snapshot.val());
-	     document.getElementById("備註").value=snapshot.val() ;
+		  firebase.database().ref('/'+profile.userId).once('value',function(snapshot){
+			  
+	          console.log(snapshot.val());
+	         
 	          var id = new Array(1,2,3); 
 		  var value = new Array(snapshot.val().toString(),profile.userId,"例項教程"); 
 		  var select = document.getElementById("area"); 
@@ -43,7 +44,9 @@
 		    option.setAttribute("value",id[x]);
 		    option.appendChild(document.createTextNode(value[x])); 
 		    select.appendChild(option);
-		  } 	
+		  } 
+			  
+			  
 		})
 			  
 			  
