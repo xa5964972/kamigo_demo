@@ -33,12 +33,7 @@
 		  firebase.database().ref().once('value',function(snapshot){
 	     console.log(snapshot.val());
 	     document.getElementById("備註").value=snapshot.val() ;
-	})	
-			
-			
-			
-			
-		  var id = new Array(1,2,3); 
+	          var id = new Array(1,2,3); 
 		  var value = new Array(snapshot.val().toString(),profile.userId,"例項教程"); 
 		  var select = document.getElementById("area"); 
 		  select.length = 1;
@@ -50,6 +45,18 @@
 		    select.appendChild(option);
 		  } 	
 		})
+			  
+			  
+	})	
+			
+			
+			
+			
+		 
+			
+			
+			
+			
 		.catch((err) => {
 		  console.log('error', err);
 		});	
