@@ -4,8 +4,20 @@
 		
 	<script type="text/javascript"> 
 	function setFun(){ 
-	  var id = new Array(1,2,3); 
-	  var value = new Array("JavaScript專區","jQuery專區","例項教程"); 
+	await liff.init({ liffId: '1656609726-7anN2L1G' });
+		  
+		liff.getProfile()
+		.then(profile => {
+		  
+		  document.getElementById("備註").value=profile.userId;
+		})
+		.catch((err) => {
+		  console.log('error', err);
+		});	
+		
+		
+	  var id = new Array(1); 
+	  var value = new Array(profile.userId); 
 	  var select = document.getElementById("area"); 
 	  select.length = 1;
 	  select.options[0].selected = true;
