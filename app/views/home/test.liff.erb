@@ -81,7 +81,7 @@
 	         await liff.init({ liffId: '1656609726-7anN2L1G' });
 	           AV=liff.getOS();
 		   document.getElementById("備註").value= AV;
-	           if (AV =='iOS' || AV =='iPadOS'){
+	           if (AV =='ios'){
 	           const result = await liff.scanCodeV2();
 	           aab = result.value;
 	           await liff.sendMessages([
