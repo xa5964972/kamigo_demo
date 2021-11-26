@@ -3,27 +3,7 @@
 <head>
 	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
-	<script defer>
-		  
-		  const firebaseConfig = {
-		    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
-		    authDomain: "money-90d4e.firebaseapp.com",
-		    databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com",
-		    projectId: "money-90d4e",
-		    storageBucket: "money-90d4e.appspot.com",
-		    messagingSenderId: "49794645960",
-		    appId: "1:49794645960:web:02f35c06ae03cba6a8cafd",
-		    measurementId: "G-0CF89FP9ZM"
-		  };
-		firebase.initializeApp({
-		  databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com/"
-		});
-		const database = firebase.database();
-		database.ref('/').once('value',e=>{
-		    console.log(e.val());
-		});
-
-		</script>
+	
 
 	
 	
@@ -329,5 +309,26 @@
 			<td><input id="btn_del" onclick="deleteSymbol()" style=" opacity:0;position:fixed;left:69%;top:78% ;width: 15%; height: 4%;" type="button"></td>
 		</tr>
 	</table>
+	<script defer>
+		  
+		  const firebaseConfig = {
+		    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
+		    authDomain: "money-90d4e.firebaseapp.com",
+		    databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com",
+		    projectId: "money-90d4e",
+		    storageBucket: "money-90d4e.appspot.com",
+		    messagingSenderId: "49794645960",
+		    appId: "1:49794645960:web:02f35c06ae03cba6a8cafd",
+		    measurementId: "G-0CF89FP9ZM"
+		  };
+		firebase.initializeApp({
+		  databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com/"
+		});
+		const database = firebase.database();
+		database.ref('/').once('value',e=>{
+		    console.log(e.val());
+		});
+
+		</script>
 </body>
 </html>
