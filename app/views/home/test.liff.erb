@@ -33,7 +33,7 @@
 		liff.getProfile()
 		.then(profile => {
 		  
-		  document.getElementById("備註").value=profile.displayName;
+		  document.getElementById("備註").value=profile.userId;
 		})
 		.catch((err) => {
 		  console.log('error', err);
