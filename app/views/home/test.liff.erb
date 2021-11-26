@@ -3,8 +3,8 @@
 <head>
 	
 	<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase.js"></script>
-	<script defer='defer'>
-		  
+	<script>
+		 function ad(){ 
 		  const firebaseConfig = {
 		    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
 		    authDomain: "money-90d4e.firebaseapp.com",
@@ -19,12 +19,13 @@
                   firebase.initializeApp(firebaseConfig);
 
                   var database = firebase.database();
-                  firebase.database().ref().set({name:'jessica',age:188880});  
+                  firebase.database().ref().set({name:'jessica',age:100});  
                    
+                          }
+	           ad()
+	
+	
 	</script>
-	
-	
-	
 	<meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 	<meta charset="UTF-8">
 	<title>計算器</title>
@@ -65,6 +66,8 @@
 		audio.src = "https://storage.soundoftext.com/d336c230-4dea-11ec-8516-4931b7e5659d.mp3";
 		audio.play();
 	      }
+		
+		
 	       async function scanCodeV3() {    
 		  var a=['14872301', '37250799', '085', '821', '911', '916'];
 	          var b=['09', '10'];
