@@ -31,8 +31,9 @@
 
 		  var database = firebase.database();
 		  firebase.database().ref('/'+profile.userId+'/a').once('value',function(snapshot){
-			  
-	          if (document.getElementById("收支").value == '收入'){
+		  hi=document.getElementById("收支").value
+	          console.log(hi);
+	          if (hi == "收入"){
 	          cat=snapshot.val().toString().split(';')[1].toString().split(' ')
 		  }
 	          else{
