@@ -11,8 +11,8 @@
 		  
 		liff.getProfile()
 		.then(profile => {
-		  ID=profile.userId;
 		  
+		  document.getElementById("area").style.opacity = "1";
 		  var id = new Array(1,2,3); 
 		  var value = new Array("JavaScript專區",profile.userId,"例項教程"); 
 		  var select = document.getElementById("area"); 
@@ -33,9 +33,7 @@
 			
 		} 
 
-window.onload=function(){
-  setFun()  
-}
+
 </script>
 	
 	
@@ -391,7 +389,7 @@ window.onload=function(){
 			<td><input onclick="inputExp('0')" style="opacity:0;position:fixed;left:31%;top:78% ;width: 15%; height: 4%; id=" type="button"></td>
 			<td><input onclick="inputExp('.')" style="opacity:0;position:fixed;left:50%;top:78% ;width: 15%; height: 4%; id=" type="button"></td>
 			<td><input id="btn_del" onclick="deleteSymbol()" style=" opacity:0;position:fixed;left:69%;top:78% ;width: 15%; height: 4%;" type="button"></td>
-			<select name="area" id="area"> 
+			<select name="area" id="area" style="opacity:0"> 
 			<option value="0">--其他--</option> 
 			</select> 
 			
