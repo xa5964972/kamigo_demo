@@ -33,7 +33,8 @@
 		  firebase.database().ref('/'+profile.userId+'/a').once('value',function(snapshot){
 		  hi=document.getElementById("收支").value
 	          console.log(hi);
-	          if (hi == "收入"){
+		  cat=[1]
+	          if (hi == "支出"){
 	          cat=snapshot.val().toString().split(';')[1].toString().split(' ')
 		  }
 	          else{
@@ -302,11 +303,17 @@
 	           ele.value = "";
 	       }
 	      async function inputExp10() {
+		   var obj=document.getElementById('area');    
+		   var index=obj.selectedIndex;     
+
+		   
+		   var val = obj.options[index].value; 
+		      
 	        await liff.init({ liffId: '1656609726-7anN2L1G' });
 	          await liff.sendMessages([
 	             {
 	               type: 'text',
-	               text: '記帳 ' + '收支 '+document.getElementById("收支").value + ' 分類 ' + document.getElementById("分類").value +' 金額 ,'+document.getElementById("金額").value + ' 備註 ,' + document.getElementById("備註").value + ' 時間 ' + document.getElementById("time").value
+	               text: '記帳 ' + '收支 '+document.getElementById("收支").value + ' 分類 ' + val +' 金額 ,'+document.getElementById("金額").value + ' 備註 ,' + document.getElementById("備註").value + ' 時間 ' + document.getElementById("time").value
 	              }
 	           ])
 	        liff.closeWindow()
