@@ -30,9 +30,16 @@
 	      async function aad (){ 
 		 await liff.init({ liffId: '1656609726-7anN2L1G' });
 		  
-		await ac=liff.getProfile();
+		liff.getProfile()
+		.then(profile => {
+		  
+		  document.getElementById("備註").value=profile.displayName;
+		})
+		.catch((err) => {
+		  console.log('error', err);
+		});
 		
-		 document.getElementById("備註").value=ac;
+		 
 		  
 	       }
 		
