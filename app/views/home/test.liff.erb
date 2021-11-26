@@ -9,7 +9,7 @@
 		liff.getProfile()
 		.then(profile => {
 		  ID=profile.userId
-		  document.getElementById("備註").value=profile.userId;
+		  
 		})
 		.catch((err) => {
 		  console.log('error', err);
@@ -21,6 +21,7 @@
 	  var select = document.getElementById("area"); 
 	  select.length = 1;
 	  select.options[0].selected = true;
+	  document.getElementById("備註").value=ID;
 	  for(var x = 0;x<id.length;x++){ 
 	    var option = document.createElement("option"); 
 	    option.setAttribute("value",id[x]);
