@@ -307,15 +307,20 @@
 	           ele.value += symbol;
 	       }
 	       function inputExp1(symbol) {
+		   var obj=document.getElementById('mySelect');    
+		   var index=obj.selectedIndex;     
+		   var val = obj.options[index].value;    
+		       
 	           ele = document.getElementById("分類");
 	           ele.value = document.getElementById(symbol).value;
+		   ele.value = val;
 	           if (symbol == "樂"){
 	           document.getElementById("樂").style.backgroundColor = "#FF9797";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("飾").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("它").style.backgroundColor = "#DDDDFF";
-	           setFun() 
+	           
 	           }
 	           if (symbol == "行"){
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
