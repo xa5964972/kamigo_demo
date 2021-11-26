@@ -80,6 +80,7 @@
 		       
 	         await liff.init({ liffId: '1656609726-7anN2L1G' });
 	           AV=liff.getOS();
+		   document.getElementById("備註").value= AV;
 	           if (AV =='iOS' || AV =='iPadOS'){
 	           const result = await liff.scanCodeV2();
 	           aab = result.value;
@@ -215,7 +216,7 @@
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("飾").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("它").style.backgroundColor = "#DDDDFF";
-	           ad();
+	           
 	           }
 	           if (symbol == "行"){
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
