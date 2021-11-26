@@ -1,6 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
+	<script type="module">
+		  // Import the functions you need from the SDKs you need
+		  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+		  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
+		  // TODO: Add SDKs for Firebase products that you want to use
+		  // https://firebase.google.com/docs/web/setup#available-libraries
+
+		  // Your web app's Firebase configuration
+		  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		  const firebaseConfig = {
+		    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
+		    authDomain: "money-90d4e.firebaseapp.com",
+		    databaseURL: "https://money-90d4e-default-rtdb.firebaseio.com",
+		    projectId: "money-90d4e",
+		    storageBucket: "money-90d4e.appspot.com",
+		    messagingSenderId: "49794645960",
+		    appId: "1:49794645960:web:02f35c06ae03cba6a8cafd",
+		    measurementId: "G-0CF89FP9ZM"
+		  };
+
+		  // Initialize Firebase
+		  const app = initializeApp(firebaseConfig);
+		  const database = getDatabase(app);
+                   
+import { getDatabase, ref, set } from "firebase/database";
+
+function writeUserData(userId, name, email, imageUrl) {
+  const db = getDatabase();
+  set(ref(db, 'users/' + userId), {
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+}
+
+		</script>
+	
+	
+	
+	
 	<meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 	<meta charset="UTF-8">
 	<title>計算器</title>
