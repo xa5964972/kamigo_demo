@@ -12,7 +12,7 @@
 		liff.getProfile()
 		.then(profile => {
 		  
-		  document.getElementById("area").style.opacity = "1";
+		  
 			
 		  const firebaseConfig = {
 		    apiKey: "AIzaSyCT6VWghtf9FKFcukagD5WyuLFsmLCLpJs",
@@ -315,6 +315,7 @@
 	           ele.value = document.getElementById(symbol).value;
 		   ele.value = val;
 	           if (symbol == "樂"){
+                   document.getElementById("area").style.opacity = "0";
 	           document.getElementById("樂").style.backgroundColor = "#FF9797";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
@@ -323,6 +324,7 @@
 	           
 	           }
 	           if (symbol == "行"){
+	           document.getElementById("area").style.opacity = "0";
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("行").style.backgroundColor = "#FF9797";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
@@ -330,6 +332,7 @@
 	           document.getElementById("它").style.backgroundColor = "#DDDDFF";
 	           }
 	           if (symbol == "飾"){
+		   document.getElementById("area").style.opacity = "0";	   
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
@@ -337,6 +340,7 @@
 	           document.getElementById("它").style.backgroundColor = "#DDDDFF";
 	           }
 	           if (symbol == "食"){
+		   document.getElementById("area").style.opacity = "0";	   
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("食").style.backgroundColor = "#FF9797";
@@ -349,6 +353,7 @@
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("飾").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("它").style.backgroundColor = "#FF9797";
+	           document.getElementById("area").style.opacity = "1";
 	           setFun()
 	           }             
 	       }
