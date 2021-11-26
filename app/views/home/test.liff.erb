@@ -32,15 +32,23 @@
 		  var database = firebase.database();
 		  firebase.database().ref('/'+profile.userId+'/a').once('value',function(snapshot){
 			  
-	          
+	          if (ele = document.getElementById("收支") == '收入'){
 	          cat=snapshot.val().toString().split(';')[1].toString().split(' ')
+		  }
+	          else{
+			cat=snapshot.val().toString().split(';')[2].toString().split(' ')  
+		  }
+			  
+			  
 	          console.log(cat);
 	          var id = [];
 	          for (var i=1; i<=cat.length; i++){
 		   id.push(i);
 		  }
 		  console.log(id);
+	         
 		  var value = cat; 
+		  
 		  var select = document.getElementById("area"); 
 		  select.length = 1;
 		  select.options[0].selected = true;
