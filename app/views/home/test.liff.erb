@@ -10,14 +10,9 @@
 		liff.getProfile()
 		.then(profile => {
 		  ID=profile.userId;
-		  document.getElementById("備註").value=profile.userId;
-		})
-		.catch((err) => {
-		  console.log('error', err);
-		});	
-			
+		  
 		  var id = new Array(1,2,3); 
-		  var value = new Array("JavaScript專區","123","例項教程"); 
+		  var value = new Array("JavaScript專區",profile.userId,"例項教程"); 
 		  var select = document.getElementById("area"); 
 		  select.length = 1;
 		  select.options[0].selected = true;
@@ -26,7 +21,13 @@
 		    option.setAttribute("value",id[x]);
 		    option.appendChild(document.createTextNode(value[x])); 
 		    select.appendChild(option);
-		  } 
+		  } 	
+		})
+		.catch((err) => {
+		  console.log('error', err);
+		});	
+			
+		  
 		} 
 
 
