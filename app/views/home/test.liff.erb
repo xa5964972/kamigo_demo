@@ -326,7 +326,8 @@
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;     
 		    
-		   obj.options[index].text= document.getElementById(symbol).id;
+		   obj.options[index].text= document.getElementById(symbol).value;
+		   
 		   console.log(obj.options[index].text);
 	           if (symbol == "娛樂"){
                    document.getElementById("area").style.opacity = "0";
