@@ -328,10 +328,8 @@
 		   var index=obj.selectedIndex;     
 		    
 		   obj.options[index].value= symbol;
-		   var val = obj.options[index].value;   
-	           ele = document.getElementById("分類");
-	           ele.value = document.getElementById(symbol).value;
-		   ele.value = val;
+		   
+	  
 	           if (symbol == "樂"){
                    document.getElementById("area").style.opacity = "0";
 		   document.getElementById('area').disabled=true;
@@ -398,7 +396,7 @@
 	           document.getElementById("它").value= "它";
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;       
-		   obj.options[index].value='新'; 
+		   obj.options[index].value='薪'; 
 	           
 	           }
 	           if (symbol == "支出"){
