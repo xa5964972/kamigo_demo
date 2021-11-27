@@ -33,7 +33,7 @@
 		  firebase.database().ref('/'+profile.userId+'/a').once('value',function(snapshot){
 		  hi=document.getElementById("收支").value
 	          console.log(hi);
-		  cat=[1]
+		  console.log(hi);
 	          if (hi == "支出"){
 	          cat=snapshot.val().toString().split(';')[1].toString().split(' ');
 		  }
@@ -334,6 +334,7 @@
 		   ele.value = val;
 	           if (symbol == "樂"){
                    document.getElementById("area").style.opacity = "0";
+		   document.getElementById("area").style.readonly = "readonly";
 	           document.getElementById("樂").style.backgroundColor = "#FF9797";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
