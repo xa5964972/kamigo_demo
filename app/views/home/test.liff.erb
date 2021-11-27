@@ -325,8 +325,34 @@
 		   
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;     
-		    
-		   obj.options[index].text= document.getElementById(symbol).value;
+		   if (document.getElementById(symbol).value =='食') {
+		   obj.options[index].text= '飲食';
+		   }
+		   if (document.getElementById(symbol).value =='行') {
+		   obj.options[index].text= '交通';
+		   }
+		   if (document.getElementById(symbol).value =='樂') {
+		   obj.options[index].text= '娛樂';
+		   }
+		    if (document.getElementById(symbol).value =='飾') {
+		   obj.options[index].text= '服飾';
+		   }
+		   if (document.getElementById(symbol).value =='它') {
+		   obj.options[index].text= '其他';
+		   }
+		   if (document.getElementById(symbol).value =='薪') {
+		   obj.options[index].text= '薪水';
+		   }
+		   if (document.getElementById(symbol).value =='獎') {
+		   obj.options[index].text= '獎金';
+		   }
+		   if (document.getElementById(symbol).value =='零') {
+		   obj.options[index].text= '零用錢';
+		   }
+		   if (document.getElementById(symbol).value =='投') {
+		   obj.options[index].text= '投資';
+		   }
+		   
 		   
 		   console.log(obj.options[index].text);
 	           if (symbol == "娛樂"){
