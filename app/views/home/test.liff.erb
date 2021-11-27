@@ -326,7 +326,7 @@
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;     
 		    
-		   obj.options[index].value= document.getElementById(symbol).value;
+		   obj.options[index].text= document.getElementById(symbol).value;
 		   
 	           if (symbol == "樂"){
                    document.getElementById("area").style.opacity = "0";
@@ -397,7 +397,7 @@
 	           
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;       
-		   obj.options[index].value='薪'; 
+		   obj.options[index].text='薪'; 
 	           
 	           }
 	           if (symbol == "支出"){
@@ -416,7 +416,7 @@
 	           document.getElementById("它").value= "它";
 	           var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;       
-		   obj.options[index].value='食';
+		   obj.options[index].text='食';
 	           }                      
 	       }
 	  function giveResult() {
