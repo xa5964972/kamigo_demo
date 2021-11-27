@@ -328,7 +328,7 @@
 		    
 		   obj.options[index].value= symbol;
 		   console.log(symbol);
-	  
+	           console.log(document.getElementById("飾").value);
 	           if (symbol == "樂"){
                    document.getElementById("area").style.opacity = "0";
 		   document.getElementById('area').disabled=true;
@@ -394,7 +394,7 @@
 	           document.getElementById("食").value= "薪";
 	           document.getElementById("飾").value= "投";
 	           document.getElementById("它").value= "它";
-	           console.log(document.getElementById("飾").value);
+	           
 		   var obj=document.getElementById('area');    
 		   var index=obj.selectedIndex;       
 		   obj.options[index].value='薪'; 
