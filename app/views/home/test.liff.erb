@@ -334,7 +334,7 @@
 		   ele.value = val;
 	           if (symbol == "樂"){
                    document.getElementById("area").style.opacity = "0";
-		   document.getElementById("area").style.disabled = false;
+		   document.getElementById("area").disabled = false;
 	           document.getElementById("樂").style.backgroundColor = "#FF9797";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
@@ -344,6 +344,7 @@
 	           }
 	           if (symbol == "行"){
 	           document.getElementById("area").style.opacity = "0";
+		   document.getElementById("area").style.disabled = false;	   
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("行").style.backgroundColor = "#FF9797";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
@@ -352,6 +353,7 @@
 	           }
 	           if (symbol == "飾"){
 		   document.getElementById("area").style.opacity = "0";	   
+		   document.getElementById("area").style.disabled = false;	   
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("食").style.backgroundColor = "#DDDDFF";
@@ -359,6 +361,7 @@
 	           document.getElementById("它").style.backgroundColor = "#DDDDFF";
 	           }
 	           if (symbol == "食"){
+		   document.getElementById("area").style.disabled = false;	   
 		   document.getElementById("area").style.opacity = "0";	   
 	           document.getElementById("樂").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("行").style.backgroundColor = "#DDDDFF";
@@ -373,6 +376,7 @@
 	           document.getElementById("飾").style.backgroundColor = "#DDDDFF";
 	           document.getElementById("它").style.backgroundColor = "#FF9797";
 	           document.getElementById("area").style.opacity = "1";
+		   document.getElementById("area").style.disabled = true;
 	           setFun()
 	           }             
 	       }
